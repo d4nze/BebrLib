@@ -1,0 +1,10 @@
+﻿  Vector2.cpp
+  Window.cpp
+  Renderer.cpp
+  Colorf.cpp
+  Coloru.cpp
+  Shader.cpp
+  ShaderProgram.cpp
+  ShaderHandler.cpp
+MSVCRT.lib(exe_main.obj) : error LNK2001: неразрешенный внешний символ main.
+C:\Users\Danii\source\repos\BebrLib\x64\Release\BebrLib.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
