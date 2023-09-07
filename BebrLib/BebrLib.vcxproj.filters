@@ -81,13 +81,10 @@
     <ClInclude Include="Bebr\Shapes\Shape.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\TextureData.h">
+    <ClInclude Include="Bebr\Importer\Image.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\TextureDataManager.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Bebr\Importer\Texture.h">
+    <ClInclude Include="Bebr\Render\Texture.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -155,13 +152,10 @@
     <ClCompile Include="Bebr\Shapes\Shape.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\TextureData.cpp">
+    <ClCompile Include="Bebr\Importer\Image.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\TextureDataManager.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Bebr\Importer\Texture.cpp">
+    <ClCompile Include="Bebr\Render\Texture.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

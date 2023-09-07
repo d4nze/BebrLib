@@ -165,9 +165,8 @@
     <ClInclude Include="Bebr\Render\FragmentShader.h" />
     <ClInclude Include="Bebr\Render\ShaderUniform.h" />
     <ClInclude Include="Bebr\Shapes\Shape.h" />
-    <ClInclude Include="Bebr\Render\TextureData.h" />
-    <ClInclude Include="Bebr\Render\TextureDataManager.h" />
-    <ClInclude Include="Bebr\Importer\Texture.h" />
+    <ClInclude Include="Bebr\Importer\Image.h" />
+    <ClInclude Include="Bebr\Render\Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bebr\System\Window.cpp" />
@@ -191,9 +190,8 @@
     <ClCompile Include="Bebr\Render\FragmentShader.cpp" />
     <ClCompile Include="Bebr\Render\ShaderUniform.cpp" />
     <ClCompile Include="Bebr\Shapes\Shape.cpp" />
-    <ClCompile Include="Bebr\Render\TextureData.cpp" />
-    <ClCompile Include="Bebr\Render\TextureDataManager.cpp" />
-    <ClCompile Include="Bebr\Importer\Texture.cpp" />
+    <ClCompile Include="Bebr\Importer\Image.cpp" />
+    <ClCompile Include="Bebr\Render\Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

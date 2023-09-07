@@ -1,4 +1,2 @@
 ﻿  main.cpp
-C:\Users\Danii\source\repos\BebrLib\Demo\main.cpp(88,20): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Danii\source\repos\BebrLib\Demo\main.cpp(98,20): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
   Demo.vcxproj -> C:\Users\Danii\source\repos\BebrLib\x64\Debug\Demo.exe
