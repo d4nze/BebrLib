@@ -148,6 +148,7 @@
     <Image Include="Resources\Textures\1x1.bmp" />
     <Image Include="Resources\Textures\1x2 24bit.bmp" />
     <Image Include="Resources\Textures\1x2.bmp" />
+    <Image Include="Resources\Textures\BMP test.bmp" />
     <Image Include="Resources\Textures\image.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

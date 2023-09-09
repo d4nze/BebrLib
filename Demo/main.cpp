@@ -2,13 +2,17 @@
 #include "Bebr/System/Keyboard.h"
 #include "Bebr/Render/Renderer.h"
 
+#include "Bebr/Shapes/Shape2Vertex.h"
+
 #include "Bebr/Render/ShaderSource.h"
 #include "Bebr/Render/ShaderProgram.h"
 
 #include "Bebr/Render/VertexArray.h"
 #include "Bebr/Render/VertexBuffer.h"
 #include "Bebr/Render/VertexBufferLayout.h"
-#include "Bebr/Render/IndexBuffer.h"
+#include "Bebr/Render/IndexBuffer.h""
+
+#include "Bebr/Render/Texture.h"
 
 int main()
 {
@@ -16,12 +20,13 @@ int main()
 	bebr::system::Keyboard& keyboard = bebr::system::Keyboard::GetInstance();
 	bebr::render::Renderer& renderer = bebr::render::Renderer::GetInstance();
 
-	std::vector<float> vertices = {
-		-0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f,
-		+0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f,
-		+0.0f, +0.5f, 0.0f, 0.0f, 1.0f, 1.0f,
+	std::vector<bebr::shapes::Shape2Vertex> vertices = {
+		{ { -0.5f, +0.5f }, { 1.f, 0.f, 0.f, 1.f }, { 0.f, 1.f } } ,
+		{ { +0.5f, +0.5f }, { 0.f, 1.f, 0.f, 1.f }, { 1.f, 1.f } } ,
+		{ { +0.5f, -0.5f }, { 1.f, 1.f, 1.f, 1.f }, { 1.f, 0.f } } ,
+		{ { -0.5f, -0.5f }, { 0.f, 0.f, 1.f, 1.f }, { 0.f, 0.f } } 
 	};
-	std::vector<unsigned int> indices = { 0u, 1u, 2u };
+	std::vector<unsigned int> indices = { 0u, 1u, 2u, 0u, 3u, 2u };
 
 	bebr::render::VertexShader vertShader;
 	bebr::render::FragmentShader fragShader;
@@ -42,6 +47,7 @@ int main()
 
 	vbl.push<float>( 2u );
 	vbl.push<float>( 4u );
+	vbl.push<float>( 2u );
 
 	va.bind();
 	vb.bind();
@@ -52,8 +58,18 @@ int main()
 	vb.unbind();
 	ib.unbind();
 
-	program.use();
-	program[ "u_color" ].setFloat4( 1.f, 0.f, 0.f, 0.f );
+	bebr::render::Texture texture;
+	// texture.load( "Resources/Textures/BMP test.bmp" );
+	texture.create( 2, 2 );
+	texture.setPixel( 0, 1, bebr::core::Coloru::Red );
+	texture.setPixel( 1, 1, bebr::core::Coloru::Green );
+	texture.setPixel( 0, 0, bebr::core::Coloru::Blue );
+	texture.setPixel( 1, 0, bebr::core::Coloru::White );
+	texture.bind();
+	texture.setWrapping( texture.Repeat );
+	texture.setFilter( texture.Nearest );
+	texture.generateMipmap();
+	texture.unbind();
 
 	while (window.isOpen())
 	{
@@ -62,7 +78,20 @@ int main()
 
 		renderer.start( &window );
 		renderer.clear( { 0.1f, 0.1f, 0.25f } );
-		renderer.drawTriangle( va, vb, vbl, ib );
+
+		program.use();
+		program[ "u_texture" ].setInt1( 0 );
+		texture.bind();
+		texture.bufferData();
+		va.bind();
+		va.updateAttribute( vb, vbl );
+		ib.bind();
+		renderer.drawTriangle( ib );
+		ib.unbind();
+		va.unbind();
+		texture.unbind();
+		program.unuse();
+
 		renderer.display();
 		renderer.end();
 	}

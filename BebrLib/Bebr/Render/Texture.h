@@ -1,5 +1,5 @@
 #pragma once
-#include "TextureData.h"
+#include "../Core/Coloru.h"
 
 namespace bebr
 {
@@ -9,12 +9,16 @@ namespace bebr
 		{
 		public:
 			Texture();
+			~Texture();
 
 			void load( const char* path );
-			void create( int width, int heigth );
+			void create( int width, int height );
 
 			void bind();
 			void unbind();
+
+			void generateMipmap();
+			void bufferData();
 
 			static enum WrappingType
 			{
@@ -32,15 +36,23 @@ namespace bebr
 			};
 			void setFilter( FilterType type = Nearest );
 
+			void setPixel( int x, int y, core::Coloru color );
+			core::Coloru getPixel( int x, int y );
+
 			int getWidth();
 			int getHeigth();
+
+		private:
+			static void Bind( unsigned int id );
 
 		protected:
 			unsigned char* m_data;
 			int m_width, m_height;
+			unsigned int m_colors;
 
 		private:
 			unsigned int m_id;
+			static unsigned int s_currentId;
 		};
 	}
 }

@@ -1,7 +1,7 @@
 #include "Image.h"
 #include <fstream>
 
-#pragma pack(push, 1) // отключение выравнивания байт
+#pragma pack(push, 1)
 struct BMPheader24 {
     char signature[ 2 ];
     uint32_t fileSize;
@@ -56,7 +56,7 @@ struct BMPheader32 {
     uint32_t gammaGreen;
     uint32_t gammaBlue;
 };
-#pragma pack(pop) // включение выравнивания байт
+#pragma pack(pop)
 
 unsigned char* bebr::importer::image::LoadBMP( const char* path, int* width, int* height, unsigned int* colors )
 {
@@ -102,4 +102,15 @@ unsigned char* bebr::importer::image::LoadBMP( const char* path, int* width, int
 void bebr::importer::image::Free( unsigned char* data )
 {
     if (data != nullptr) { delete[] data; }
+}
+
+void bebr::importer::image::ConvertBGRtoRGB( unsigned char*& data, int width, int height, unsigned int colors )
+{
+    int colorsi = static_cast<int>(colors);
+    int size = width * height * colorsi;
+    for (int i = 0; i < size; i += colors)
+    {
+        // Blue <-> Red
+        std::swap( data[ i ], data[ i + 2 ] );
+    }
 }

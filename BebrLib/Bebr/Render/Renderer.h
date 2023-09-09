@@ -21,13 +21,7 @@ namespace bebr
 
 			void clear( float r, float g, float b, float a = 1.f ) const;
 			void clear( core::Colorf color ) const;
-			void _setAttribute( const VertexBuffer& vb );
-			void drawTriangle(
-				const VertexArray& va, const VertexBuffer& vb,
-				const VertexBufferLayout& vbl, int trianglesCount = 1 );
-			void drawTriangle(
-				const VertexArray& va, const VertexBuffer& vb,
-				const VertexBufferLayout& vbl, IndexBuffer& ib );
+			void drawTriangle( IndexBuffer& ib );
 
 			void display() const;
 

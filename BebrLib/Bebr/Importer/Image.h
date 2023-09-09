@@ -11,6 +11,8 @@ namespace bebr
 			unsigned char* LoadJPG( const char* path, int* width, int* heigth, unsigned int* colors );
 			unsigned char* LoadPNG( const char* path, int* width, int* heigth, unsigned int* colors );
 			void Free( unsigned char* data );
+
+			void ConvertBGRtoRGB( unsigned char*& data, int width, int height, unsigned int colors );
 		};
 	}
 }

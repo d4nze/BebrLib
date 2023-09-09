@@ -43,5 +43,8 @@
     <Image Include="Resources\Textures\1x2 24bit.bmp">
       <Filter>Файлы ресурсов</Filter>
     </Image>
+    <Image Include="Resources\Textures\BMP test.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
   </ItemGroup>
 </Project>

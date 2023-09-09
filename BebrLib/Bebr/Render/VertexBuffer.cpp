@@ -42,5 +42,9 @@ void bebr::render::VertexBuffer::Bind( unsigned int id )
 	}
 }
 
+#include "../Shapes/Shape2Vertex.h"
+
 template void bebr::render::VertexBuffer::setData( const std::vector<float>& ) const;
+template void bebr::render::VertexBuffer::setData( const std::vector<shapes::Shape2Vertex>& ) const;
 template void bebr::render::VertexBuffer::updateData( const std::vector<float>& ) const;
+template void bebr::render::VertexBuffer::updateData( const std::vector<shapes::Shape2Vertex>& ) const;

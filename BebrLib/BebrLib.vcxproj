@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)GLEW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GLEW\include; $(SolutionDir)BebrLibPrivate;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,6 +167,8 @@
     <ClInclude Include="Bebr\Shapes\Shape.h" />
     <ClInclude Include="Bebr\Importer\Image.h" />
     <ClInclude Include="Bebr\Render\Texture.h" />
+    <ClInclude Include="Bebr\Shapes\Shape2Vertex.h" />
+    <ClInclude Include="Bebr\Shapes\Shape2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bebr\System\Window.cpp" />
@@ -192,6 +194,8 @@
     <ClCompile Include="Bebr\Shapes\Shape.cpp" />
     <ClCompile Include="Bebr\Importer\Image.cpp" />
     <ClCompile Include="Bebr\Render\Texture.cpp" />
+    <ClCompile Include="Bebr\Shapes\Shape2Vertex.cpp" />
+    <ClCompile Include="Bebr\Shapes\Shape2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

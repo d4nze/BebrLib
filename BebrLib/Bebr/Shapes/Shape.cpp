@@ -1,8 +1,8 @@
 #include "Shape.h"
 
-bebr::shapes::Shape::Shape() : m_texture( nullptr ) {}
+template<typename VertexType>
+bebr::shapes::Shape<VertexType>::Shape() : m_texture( nullptr ) {}
 
-void bebr::shapes::Shape::render()
-{
+#include "Shape2Vertex.h"
 
-}
+template class bebr::shapes::Shape<bebr::shapes::Shape2Vertex>;
