@@ -1,3 +1,7 @@
-﻿  VertexBuffer.cpp
+﻿  stb_image.cpp
+  Texture.cpp
+C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\BebrLib\Bebr\Render\Texture.h(29,5): warning C4091: static : пропускается слева от "bebr::render::Texture::WrappingType", когда ни одна переменная не объявлена
+C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\BebrLib\Bebr\Render\Texture.h(36,5): warning C4091: static : пропускается слева от "bebr::render::Texture::FilterType", когда ни одна переменная не объявлена
+  Создание кода...
 glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR уже определен в opengl32.lib(OPENGL32.dll); второе определение пропущено
   BebrLib.vcxproj -> C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\x64\Debug\BebrLib.lib

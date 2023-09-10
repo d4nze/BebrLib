@@ -21,10 +21,10 @@ int main()
 	bebr::render::Renderer& renderer = bebr::render::Renderer::GetInstance();
 
 	std::vector<bebr::shapes::Shape2Vertex> vertices = {
-		{ { -0.5f, +0.5f }, { 1.f, 0.f, 0.f, 1.f }, { 0.f, 1.f } } ,
-		{ { +0.5f, +0.5f }, { 0.f, 1.f, 0.f, 1.f }, { 1.f, 1.f } } ,
+		{ { -0.5f, +0.5f }, { 1.f, 1.f, 1.f, 1.f }, { 0.f, 1.f } } ,
+		{ { +0.5f, +0.5f }, { 1.f, 1.f, 1.f, 1.f }, { 1.f, 1.f } } ,
 		{ { +0.5f, -0.5f }, { 1.f, 1.f, 1.f, 1.f }, { 1.f, 0.f } } ,
-		{ { -0.5f, -0.5f }, { 0.f, 0.f, 1.f, 1.f }, { 0.f, 0.f } } 
+		{ { -0.5f, -0.5f }, { 1.f, 1.f, 1.f, 1.f }, { 0.f, 0.f } } 
 	};
 	std::vector<unsigned int> indices = { 0u, 1u, 2u, 0u, 3u, 2u };
 
@@ -59,12 +59,7 @@ int main()
 	ib.unbind();
 
 	bebr::render::Texture texture;
-	// texture.load( "Resources/Textures/BMP test.bmp" );
-	texture.create( 2, 2 );
-	texture.setPixel( 0, 1, bebr::core::Coloru::Red );
-	texture.setPixel( 1, 1, bebr::core::Coloru::Green );
-	texture.setPixel( 0, 0, bebr::core::Coloru::Blue );
-	texture.setPixel( 1, 0, bebr::core::Coloru::White );
+	texture.load( "Resources/Textures/PNG test.png" );
 	texture.bind();
 	texture.setWrapping( texture.Repeat );
 	texture.setFilter( texture.Nearest );

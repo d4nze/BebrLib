@@ -28,22 +28,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\Textures\image.bmp">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="Resources\Textures\1x1.bmp">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="Resources\Textures\1x2.bmp">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="Resources\Textures\1x1 24bit.bmp">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="Resources\Textures\1x2 24bit.bmp">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
     <Image Include="Resources\Textures\BMP test.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="Resources\Textures\PNG test.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bebr\Importer\stb_image.h" />
     <ClInclude Include="Bebr\System\Window.h" />
     <ClInclude Include="Bebr\Render\Renderer.h" />
     <ClInclude Include="Bebr\Core\Colorf.h" />
@@ -165,12 +166,12 @@
     <ClInclude Include="Bebr\Render\FragmentShader.h" />
     <ClInclude Include="Bebr\Render\ShaderUniform.h" />
     <ClInclude Include="Bebr\Shapes\Shape.h" />
-    <ClInclude Include="Bebr\Importer\Image.h" />
     <ClInclude Include="Bebr\Render\Texture.h" />
     <ClInclude Include="Bebr\Shapes\Shape2Vertex.h" />
     <ClInclude Include="Bebr\Shapes\Shape2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bebr\Importer\stb_image.cpp" />
     <ClCompile Include="Bebr\System\Window.cpp" />
     <ClCompile Include="Bebr\Render\Renderer.cpp" />
     <ClCompile Include="Bebr\Core\Colorf.cpp" />
@@ -192,7 +193,6 @@
     <ClCompile Include="Bebr\Render\FragmentShader.cpp" />
     <ClCompile Include="Bebr\Render\ShaderUniform.cpp" />
     <ClCompile Include="Bebr\Shapes\Shape.cpp" />
-    <ClCompile Include="Bebr\Importer\Image.cpp" />
     <ClCompile Include="Bebr\Render\Texture.cpp" />
     <ClCompile Include="Bebr\Shapes\Shape2Vertex.cpp" />
     <ClCompile Include="Bebr\Shapes\Shape2.cpp" />

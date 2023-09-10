@@ -6,24 +6,25 @@ bebr::render::Texture::Texture() : m_data( nullptr ), m_width( 0 ), m_height( 0 
 	glGenTextures( 1, &m_id );
 }
 
-#include "../Importer/Image.h"
+#include "../Importer/stb_image.h"
 
 bebr::render::Texture::~Texture()
 {
 	glDeleteTextures( 1, &m_id );
-	importer::image::Free( m_data );
+	stbi_image_free( m_data );
 }
 
 void bebr::render::Texture::load( const char* path )
 {
-	if (m_data != nullptr) { importer::image::Free( m_data ); }
-	m_data = importer::image::LoadBMP( path, &m_width, &m_height, &m_colors );
-	importer::image::ConvertBGRtoRGB( m_data, m_width, m_height, m_colors );
+	if (m_data != nullptr) { stbi_image_free( m_data ); }
+	stbi_set_flip_vertically_on_load( true );
+	m_data = stbi_load( path, &m_width, &m_height, &m_colors, STBI_rgb_alpha );
+	// importer::image::ConvertBGRtoRGB( m_data, m_width, m_height, m_colors );
 }
 
 void bebr::render::Texture::create( int width, int height )
 {
-	if (m_data != nullptr) { importer::image::Free( m_data ); }
+	if (m_data != nullptr) { stbi_image_free( m_data ); }
 	m_width = width;
 	m_height = height;
 	m_colors = 4u;

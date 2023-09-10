@@ -47,8 +47,7 @@ namespace bebr
 
 		protected:
 			unsigned char* m_data;
-			int m_width, m_height;
-			unsigned int m_colors;
+			int m_width, m_height, m_colors;
 
 		private:
 			unsigned int m_id;
