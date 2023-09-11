@@ -84,6 +84,27 @@ void bebr::render::ShaderUniform::setDouble4( double value1, double value2, doub
 	glUniform4d( m_location, value1, value2, value3, value4 );
 }
 
+void bebr::render::ShaderUniform::setMat2( math::Mat2& matrix ) const
+{
+	float* matData = matrix;
+	glUniformMatrix2fv( m_location, 1, GL_TRUE, matData );
+	delete[] matData;
+}
+
+void bebr::render::ShaderUniform::setMat3( math::Mat3& matrix ) const
+{
+	float* matData = matrix;
+	glUniformMatrix3fv( m_location, 1, GL_TRUE, matData );
+	delete[] matData;
+}
+
+void bebr::render::ShaderUniform::setMat4( math::Mat4& matrix ) const
+{
+	float* matData = matrix;
+	glUniformMatrix4fv( m_location, 1, GL_TRUE, matData );
+	delete[] matData;
+}
+
 template<>
 void bebr::render::ShaderUniform::setVec2<int>( math::Vector2i value ) const
 {

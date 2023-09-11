@@ -169,6 +169,12 @@
     <ClInclude Include="Bebr\Render\Texture.h" />
     <ClInclude Include="Bebr\Shapes\Shape2Vertex.h" />
     <ClInclude Include="Bebr\Shapes\Shape2.h" />
+    <ClInclude Include="Bebr\Transform\PositionMatrix2.h" />
+    <ClInclude Include="Bebr\Transform\AngleMatrix2.h" />
+    <ClInclude Include="Bebr\Transform\ScaleMatrix2.h" />
+    <ClInclude Include="Bebr\Transform\TransformMatrix2.h" />
+    <ClInclude Include="Bebr\Camera\CameraMatrix2.h" />
+    <ClInclude Include="Bebr\Core\Rectangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bebr\Importer\stb_image.cpp" />
@@ -196,6 +202,12 @@
     <ClCompile Include="Bebr\Render\Texture.cpp" />
     <ClCompile Include="Bebr\Shapes\Shape2Vertex.cpp" />
     <ClCompile Include="Bebr\Shapes\Shape2.cpp" />
+    <ClCompile Include="Bebr\Transform\PositionMatrix2.cpp" />
+    <ClCompile Include="Bebr\Transform\AngleMatrix2.cpp" />
+    <ClCompile Include="Bebr\Transform\ScaleMatrix2.cpp" />
+    <ClCompile Include="Bebr\Transform\TransformMatrix2.cpp" />
+    <ClCompile Include="Bebr\Camera\CameraMatrix2.cpp" />
+    <ClCompile Include="Bebr\Core\Rectangle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

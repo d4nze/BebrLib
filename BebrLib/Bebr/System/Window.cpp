@@ -146,10 +146,14 @@ bool bebr::system::Window::getFullscreen()
     return (style & WS_OVERLAPPEDWINDOW) == 0;
 }
 
+#include "Keyboard.h"
 #include <thread>
 
 void bebr::system::Window::pollEvent()
 {
+    static Keyboard& keyboard = Keyboard::GetInstance();
+    keyboard.update();
+
     MSG msg;
     while (PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ))
     {
@@ -186,8 +190,6 @@ void bebr::system::Window::close()
     }
 }
 
-#include "Keyboard.h"
-
 void bebr::system::Window::makeCurrent()
 {
     wglMakeCurrent( m_hDC, m_hRC );
@@ -208,7 +210,6 @@ LRESULT CALLBACK bebr::system::Window::WindowProc( HWND hwnd, UINT uMsg, WPARAM 
 
     Window* pThis = reinterpret_cast<Window*>(GetWindowLongPtr( hwnd, GWLP_USERDATA ));
     static Keyboard& keyboard = Keyboard::GetInstance();
-    keyboard.update();
 
     if (pThis) {
         switch (uMsg) {
@@ -220,14 +221,14 @@ LRESULT CALLBACK bebr::system::Window::WindowProc( HWND hwnd, UINT uMsg, WPARAM 
             return 0;
         case WM_KEYDOWN:
         {
-            int keyCode = static_cast<int>(wParam);
-            keyboard.setKeyState( static_cast<Keyboard::Key>(keyCode), Keyboard::KeyState::Pressed );
+            Keyboard::Key keyCode = static_cast<Keyboard::Key>(static_cast<int>(wParam));
+            Keyboard::KeyState state = keyboard.getKeyState( keyCode ) == Keyboard::KeyState::Down ? Keyboard::KeyState::Down : Keyboard::KeyState::Pressed;
+            keyboard.setKeyState( keyCode, state );
             break;
         }
         case WM_KEYUP:
         {
-            int keyCode = static_cast<int>(wParam);
-            keyboard.setKeyState( static_cast<Keyboard::Key>(keyCode), Keyboard::KeyState::Released );
+            keyboard.setKeyState( static_cast<Keyboard::Key>(static_cast<int>(wParam)), Keyboard::KeyState::Released );
             break;
         }
         }

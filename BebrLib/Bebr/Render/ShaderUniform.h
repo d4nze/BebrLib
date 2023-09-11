@@ -4,6 +4,7 @@
 #include "../Math/Vector2.h"
 #include "../Math/Vector3.h"
 #include "../Math/Vector4.h"
+#include "../Math/Matrix.h"
 
 namespace bebr
 {
@@ -33,6 +34,10 @@ namespace bebr
 			void setDouble2( double value1, double value2 ) const;
 			void setDouble3( double value1, double value2, double value3 ) const;
 			void setDouble4( double value1, double value2, double value3, double value4 ) const;
+
+			void setMat2( math::Mat2& matrix ) const;
+			void setMat3( math::Mat3& matrix ) const;
+			void setMat4( math::Mat4& matrix ) const;
 
 			template<typename T>
 			void setVec2( math::Vector2<T> value ) const;

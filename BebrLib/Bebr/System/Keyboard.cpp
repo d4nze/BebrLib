@@ -26,11 +26,6 @@ bool bebr::system::Keyboard::isKeyUp( Key key ) const
 	return m_keyStates[ static_cast<unsigned int>(key) ] == Up;
 }
 
-bebr::system::Keyboard::Keyboard()
-{
-	for (unsigned int i = 0; i < KEYBOARD_TOTAL_KEYS; i++) { m_keyStates[ i ] = Up; }
-}
-
 void bebr::system::Keyboard::update()
 {
 	for (unsigned int i = 0; i < KEYBOARD_TOTAL_KEYS; i++)
@@ -43,4 +38,14 @@ void bebr::system::Keyboard::update()
 void bebr::system::Keyboard::setKeyState( Key key, KeyState state )
 {
 	m_keyStates[ key ] = state;
+}
+
+bebr::system::Keyboard::KeyState bebr::system::Keyboard::getKeyState( Key key )
+{
+	return m_keyStates[ key ];
+}
+
+bebr::system::Keyboard::Keyboard()
+{
+	for (unsigned int i = 0; i < KEYBOARD_TOTAL_KEYS; i++) { m_keyStates[ i ] = Up; }
 }

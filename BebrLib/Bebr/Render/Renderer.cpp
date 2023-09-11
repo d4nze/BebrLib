@@ -16,6 +16,17 @@ void bebr::render::Renderer::start( system::Window* window )
     glViewport( 0, 0, window->m_width, window->m_height );
 }
 
+void bebr::render::Renderer::start( system::Window* window, camera::CameraMatrix2* camera )
+{
+    window->makeCurrent();
+    m_currentWindow = window;
+
+    m_currentCamera = camera;
+    
+    if (glewInit() != GLEW_OK) { exit( -1 ); }
+    glViewport( 0, 0, window->m_width, window->m_height );
+}
+
 void bebr::render::Renderer::end()
 {
     m_currentWindow = nullptr;

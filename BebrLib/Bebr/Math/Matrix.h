@@ -11,7 +11,8 @@ namespace bebr
 			Matrix();
 			Matrix( float value );
 
-			float* const operator[]( unsigned int index ) const;
+			operator float* () const;
+			float* operator[]( unsigned int index );
 
 			Matrix<width, height> operator+( const Matrix<width, height>& other ) const;
 			Matrix<width, height>& operator+=( const Matrix<width, height>& other );
@@ -25,6 +26,8 @@ namespace bebr
 
 			template<unsigned int pWidth>
 			Matrix<pWidth, height> operator*( const Matrix<pWidth, width>& other ) const;
+			template<unsigned int pWidth>
+			Matrix<width, height>& operator*=( const Matrix<pWidth, width>& other );
 
 			bool operator==( const Matrix<width, height>& other ) const;
 			bool operator!=( const Matrix<width, height>& other ) const;
@@ -70,10 +73,28 @@ bebr::math::Matrix<width, height>::Matrix( float value )
 }
 
 template<unsigned int width, unsigned int height>
-inline float* const bebr::math::Matrix<width, height>::operator[]( unsigned int index ) const
+inline bebr::math::Matrix<width, height>::operator float* () const
+{
+	unsigned int size = width * height;
+	float* data = new float[ size ];
+	for (unsigned int i = 0; i < size; i++)
+	{
+		data[ i ] = m_data[ i % width ][ i / height ];
+	}
+	return data;
+}
+
+template<unsigned int width, unsigned int height>
+inline float* bebr::math::Matrix<width, height>::operator[]( unsigned int index )
 {
 	return m_data[ index ];
 }
+
+//template<unsigned int width, unsigned int height>
+//inline float* const bebr::math::Matrix<width, height>::operator[]( unsigned int index ) const
+//{
+//	return m_data[ index ];
+//}
 
 template<unsigned int width, unsigned int height>
 bebr::math::Matrix<width, height> bebr::math::Matrix<width, height>::operator+( const Matrix<width, height>& other ) const
@@ -169,13 +190,21 @@ bebr::math::Matrix<pWidth, height> bebr::math::Matrix<width, height>::operator*(
 		for (unsigned int j = 0; j < pWidth; ++j) {
 			float sum = 0.0f;
 			for (unsigned int k = 0; k < width; ++k) {
-				sum += m_data[ k ][ i ] * other[ j ][ k ];
+				sum += m_data[ k ][ i ] * other.m_data[ j ][ k ];
 			}
 			result[ j ][ i ] = sum;
 		}
 	}
 
 	return result;
+}
+
+template<unsigned int width, unsigned int height>
+template<unsigned int pWidth>
+inline bebr::math::Matrix<width, height>& bebr::math::Matrix<width, height>::operator*=( const Matrix<pWidth, width>& other )
+{
+	*this = *this * other;
+	return *this;
 }
 
 template<unsigned int width, unsigned int height>

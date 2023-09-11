@@ -31,12 +31,14 @@ namespace bebr
             bool isKeyReleased( Key key ) const;
             bool isKeyUp( Key key ) const;
 
-            enum KeyState { Pressed = 0x01, Down, Released, Up };
+            void update();
 
         private:
-            Keyboard();
-            void update();
+            enum KeyState { Pressed = 0x01, Down, Released, Up };
             void setKeyState( Key key, KeyState state );
+            KeyState getKeyState( Key key );
+
+            Keyboard();
 
             KeyState m_keyStates[ KEYBOARD_TOTAL_KEYS ];
 
