@@ -5,13 +5,9 @@
 namespace bebr
 {
 	namespace system { class Window; }
+	namespace buffer { class IndexBuffer; }
 	namespace render
 	{
-		class VertexArray;
-		class VertexBuffer;
-		class VertexBufferLayout;
-		class IndexBuffer;
-
 		class Renderer
 		{
 		public:
@@ -23,7 +19,7 @@ namespace bebr
 
 			void clear( float r, float g, float b, float a = 1.f ) const;
 			void clear( core::Colorf color ) const;
-			void drawTriangle( IndexBuffer& ib );
+			void drawTriangle( buffer::IndexBuffer& ib );
 
 			void display() const;
 

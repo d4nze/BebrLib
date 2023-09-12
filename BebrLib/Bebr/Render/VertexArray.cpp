@@ -21,10 +21,10 @@ void bebr::render::VertexArray::unbind() const
 	Bind( 0u );
 }
 
-#include "VertexBuffer.h"
+#include "../Buffer/VertexBuffer.h"
 #include "VertexBufferLayout.h"
 
-void bebr::render::VertexArray::updateAttribute( const VertexBuffer& vb, const VertexBufferLayout& vbl ) const
+void bebr::render::VertexArray::updateAttribute( const buffer::VertexBuffer& vb, const VertexBufferLayout& vbl ) const
 {
 	vb.bind();
 

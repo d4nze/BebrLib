@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\BebrLib\Bebr\Render\Texture.h(29,5): warning C4091: static : пропускается слева от "bebr::render::Texture::WrappingType", когда ни одна переменная не объявлена
-C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\BebrLib\Bebr\Render\Texture.h(36,5): warning C4091: static : пропускается слева от "bebr::render::Texture::FilterType", когда ни одна переменная не объявлена
+C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\BebrLib\Bebr\Texture\Texture.h(29,5): warning C4091: static : пропускается слева от "bebr::texture::Texture::WrappingType", когда ни одна переменная не объявлена
+C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\BebrLib\Bebr\Texture\Texture.h(36,5): warning C4091: static : пропускается слева от "bebr::texture::Texture::FilterType", когда ни одна переменная не объявлена
   Demo.vcxproj -> C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\x64\Debug\Demo.exe

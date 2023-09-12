@@ -3,18 +3,18 @@
 #include "Bebr/Render/Renderer.h"
 #include "Bebr/Camera/CameraMatrix2.h"
 
-#include "Bebr/Shapes/Shape2Vertex.h"
+#include "Bebr/Shape/Shape2Vertex.h"
 
-#include "Bebr/Render/ShaderSource.h"
-#include "Bebr/Render/ShaderProgram.h"
+#include "Bebr/Shader/ShaderSource.h"
+#include "Bebr/Shader/ShaderProgram.h"
 
+#include "Bebr/Buffer/VertexBuffer.h"
+#include "Bebr/Buffer/IndexBuffer.h"
 #include "Bebr/Render/VertexArray.h"
-#include "Bebr/Render/VertexBuffer.h"
 #include "Bebr/Render/VertexBufferLayout.h"
-#include "Bebr/Render/IndexBuffer.h"
 
 #include "Bebr/Transform/TransformMatrix2.h"
-#include "Bebr/Render/Texture.h"
+#include "Bebr/Texture/TextureManager.h"
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
 	camera.setCenter( 0.f, 0.f );
 	camera.setSize( 640.f, 480.f );
 
-	std::vector<bebr::shapes::Shape2Vertex> vertices = {
+	std::vector<bebr::shape::Shape2Vertex> vertices = {
 		{ { -16.f, +16.f }, { 1.f, 1.f, 1.f, 1.f }, { 0.f, 1.f } },
 		{ { +16.f, +16.f }, { 1.f, 1.f, 1.f, 1.f }, { 1.f, 1.f } },
 		{ { +16.f, -16.f }, { 1.f, 1.f, 1.f, 1.f }, { 1.f, 0.f } },
@@ -34,22 +34,22 @@ int main()
 	};
 	std::vector<unsigned int> indices = { 0u, 1u, 2u, 0u, 3u, 2u };
 
-	bebr::render::VertexShader vertShader;
-	bebr::render::FragmentShader fragShader;
-	bebr::render::ShaderProgram program;
+	bebr::shader::ShaderProgram program;
+	bebr::shader::VertexShader vertShader;
+	bebr::shader::FragmentShader fragShader;
 
-	vertShader.attachSource( bebr::render::LoadShaderSource( "Resources/Shaders/test.vert" ).getSource() );
-	fragShader.attachSource( bebr::render::LoadShaderSource( "Resources/Shaders/test.frag" ).getSource() );
+	vertShader.attachSource( bebr::shader::LoadShaderSource( "Resources/Shaders/test.vert" ).getSource() );
+	fragShader.attachSource( bebr::shader::LoadShaderSource( "Resources/Shaders/test.frag" ).getSource() );
 	if (!vertShader.compile()) { return -1; }
 	if (!fragShader.compile()) { return -1; }
 	program.attachShader( vertShader );
 	program.attachShader( fragShader );
 	program.link();
 
+	bebr::buffer::VertexBuffer vb;
+	bebr::buffer::IndexBuffer ib;
 	bebr::render::VertexArray va;
-	bebr::render::VertexBuffer vb;
 	bebr::render::VertexBufferLayout vbl;
-	bebr::render::IndexBuffer ib;
 
 	vbl.push<float>( 2u );
 	vbl.push<float>( 4u );
@@ -65,14 +65,8 @@ int main()
 	ib.unbind();
 
 	bebr::transform::TransformMatrix2 transform;
-
-	bebr::render::Texture texture;
-	texture.load( "Resources/Textures/PNG test.png" );
-	texture.bind();
-	texture.setWrapping( texture.Repeat );
-	texture.setFilter( texture.Nearest );
-	texture.generateMipmap();
-	texture.unbind();
+	bebr::texture::TextureManager textureManager;
+	bebr::texture::Texture& texture = textureManager[ "Resources/Textures/PNG test.png" ];
 
 	while (window.isOpen())
 	{

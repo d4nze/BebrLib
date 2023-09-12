@@ -2,11 +2,10 @@
 
 namespace bebr
 {
+	namespace buffer { class VertexBuffer; }
+	namespace render { class VertexBufferLayout; }
 	namespace render
 	{
-		class VertexBuffer;
-		class VertexBufferLayout;
-
 		class VertexArray
 		{
 		public:
@@ -15,7 +14,7 @@ namespace bebr
 
 			void bind() const;
 			void unbind() const;
-			void updateAttribute( const VertexBuffer& vb, const VertexBufferLayout& vbl ) const;
+			void updateAttribute( const buffer::VertexBuffer& vb, const VertexBufferLayout& vbl ) const;
 
 		private:
 			static void Bind( unsigned int id );

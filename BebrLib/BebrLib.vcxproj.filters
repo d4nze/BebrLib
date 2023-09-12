@@ -45,7 +45,7 @@
     <ClInclude Include="Bebr\Render\VertexArray.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\VertexBuffer.h">
+    <ClInclude Include="Bebr\Buffer\VertexBuffer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Bebr\Render\VertexBufferElement.h">
@@ -54,40 +54,40 @@
     <ClInclude Include="Bebr\Render\VertexBufferLayout.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\IndexBuffer.h">
+    <ClInclude Include="Bebr\Buffer\IndexBuffer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\Buffer.h">
+    <ClInclude Include="Bebr\Buffer\Buffer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\ShaderProgram.h">
+    <ClInclude Include="Bebr\Shader\ShaderProgram.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\Shader.h">
+    <ClInclude Include="Bebr\Shader\Shader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\ShaderSource.h">
+    <ClInclude Include="Bebr\Shader\ShaderSource.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\VertexShader.h">
+    <ClInclude Include="Bebr\Shader\VertexShader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\FragmentShader.h">
+    <ClInclude Include="Bebr\Shader\FragmentShader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\ShaderUniform.h">
+    <ClInclude Include="Bebr\Shader\ShaderUniform.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Shapes\Shape.h">
+    <ClInclude Include="Bebr\Shape\Shape.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Render\Texture.h">
+    <ClInclude Include="Bebr\Texture\Texture.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Shapes\Shape2Vertex.h">
+    <ClInclude Include="Bebr\Shape\Shape2Vertex.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Shapes\Shape2.h">
+    <ClInclude Include="Bebr\Shape\Shape2.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Bebr\Importer\stb_image.h">
@@ -109,6 +109,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Bebr\Core\Rectangle.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Bebr\Texture\TextureManager.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -143,46 +146,46 @@
     <ClCompile Include="Bebr\Render\VertexArray.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\VertexBuffer.cpp">
+    <ClCompile Include="Bebr\Buffer\VertexBuffer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Bebr\Render\VertexBufferLayout.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\IndexBuffer.cpp">
+    <ClCompile Include="Bebr\Buffer\IndexBuffer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\Buffer.cpp">
+    <ClCompile Include="Bebr\Buffer\Buffer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\ShaderProgram.cpp">
+    <ClCompile Include="Bebr\Shader\ShaderProgram.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\Shader.cpp">
+    <ClCompile Include="Bebr\Shader\Shader.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\ShaderSource.cpp">
+    <ClCompile Include="Bebr\Shader\ShaderSource.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\VertexShader.cpp">
+    <ClCompile Include="Bebr\Shader\VertexShader.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\FragmentShader.cpp">
+    <ClCompile Include="Bebr\Shader\FragmentShader.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\ShaderUniform.cpp">
+    <ClCompile Include="Bebr\Shader\ShaderUniform.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Shapes\Shape.cpp">
+    <ClCompile Include="Bebr\Shape\Shape.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Render\Texture.cpp">
+    <ClCompile Include="Bebr\Texture\Texture.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Shapes\Shape2Vertex.cpp">
+    <ClCompile Include="Bebr\Shape\Shape2Vertex.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Shapes\Shape2.cpp">
+    <ClCompile Include="Bebr\Shape\Shape2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Bebr\Importer\stb_image.cpp">
@@ -204,6 +207,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Bebr\Core\Rectangle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Bebr\Texture\TextureManager.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
