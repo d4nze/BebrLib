@@ -6,6 +6,7 @@ namespace bebr
 {
 	namespace system { class Window; }
 	namespace buffer { class IndexBuffer; }
+	namespace shape { class Shape2; }
 	namespace render
 	{
 		class Renderer
@@ -26,6 +27,8 @@ namespace bebr
 		private:
 			system::Window* m_currentWindow;
 			camera::CameraMatrix2* m_currentCamera;
+
+			friend class shape::Shape2;
 
 			Renderer();
 			~Renderer() = default;

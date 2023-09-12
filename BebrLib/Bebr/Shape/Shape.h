@@ -17,6 +17,12 @@ namespace bebr
 		public:
 			Shape();
 
+			void setTexture( texture::Texture* texture );
+			void setData();
+			void updateData();
+			void render();
+
+		protected:
 			std::vector<VertexType> m_vertices;
 			std::vector<unsigned int> m_indices;
 
