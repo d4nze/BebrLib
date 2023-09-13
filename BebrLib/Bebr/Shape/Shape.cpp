@@ -1,5 +1,4 @@
 #include "Shape.h"
-#include <GL/glew.h>
 
 template<typename VertexType>
 bebr::shape::Shape<VertexType>::Shape() : m_texture( nullptr ) {}
@@ -15,8 +14,8 @@ void bebr::shape::Shape<VertexType>::setData()
 {
 	m_va.bind();
 	m_vb.bind();
-	m_ib.bind();
 	m_vb.setData( m_vertices );
+	m_ib.bind();
 	m_ib.setData( m_indices );
 	m_va.unbind();
 	m_vb.unbind();
@@ -36,13 +35,15 @@ void bebr::shape::Shape<VertexType>::updateData()
 	m_ib.unbind();
 }
 
+#include <GL/glew.h>
+
 template<typename VertexType>
 void bebr::shape::Shape<VertexType>::render()
 {
 	if (m_texture == nullptr) { return; }
 	m_texture->bind();
 	m_texture->bufferData();
-	//updateData();
+	updateData();
 
 	m_va.bind();
 	m_va.updateAttribute( m_vb, m_vbl );

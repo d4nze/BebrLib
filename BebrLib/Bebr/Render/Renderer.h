@@ -5,7 +5,6 @@
 namespace bebr
 {
 	namespace system { class Window; }
-	namespace buffer { class IndexBuffer; }
 	namespace shape { class Shape2; }
 	namespace render
 	{
@@ -20,7 +19,6 @@ namespace bebr
 
 			void clear( float r, float g, float b, float a = 1.f ) const;
 			void clear( core::Colorf color ) const;
-			void drawTriangle( buffer::IndexBuffer& ib );
 
 			void display() const;
 

@@ -16,16 +16,19 @@ bebr::shape::Shape2::Shape2() : Shape<Shape2Vertex>(), transform::TransformMatri
 		if (fragShader.compile()) { s_program->attachShader( fragShader ); }
 		s_program->link();
 	}
+	Shape<Shape2Vertex>::m_vbl.push<float>( 2 );
+	Shape<Shape2Vertex>::m_vbl.push<float>( 4 );
+	Shape<Shape2Vertex>::m_vbl.push<float>( 2 );
 }
 
 void bebr::shape::Shape2::setVertices( std::vector<Shape2Vertex>& vertices )
 {
-	m_vertices = vertices;
+	Shape<Shape2Vertex>::m_vertices = vertices;
 }
 
 void bebr::shape::Shape2::setIndices( std::vector<unsigned int>& indices )
 {
-	m_indices = indices;
+	Shape<Shape2Vertex>::m_indices = indices;
 }
 
 #include "../Render/Renderer.h"

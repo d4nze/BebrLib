@@ -43,13 +43,6 @@ void bebr::render::Renderer::clear( core::Colorf color ) const
     clear( color.r, color.g, color.b, color.a );
 }
 
-#include "../Buffer/IndexBuffer.h"
-
-void bebr::render::Renderer::drawTriangle( buffer::IndexBuffer& ib )
-{
-    glDrawElements( GL_TRIANGLES, ib.getSize(), ib.getType(), nullptr );
-}
-
 void bebr::render::Renderer::display() const
 {
     m_currentWindow->swapBuffers();

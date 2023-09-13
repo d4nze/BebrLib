@@ -34,7 +34,6 @@ namespace bebr
 
 			static void Bind( unsigned int id );
 
-			unsigned int m_id;
 			unsigned int m_type;
 			unsigned int m_size;
 			static unsigned int s_currentId;
