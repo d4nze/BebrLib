@@ -144,8 +144,8 @@
     <None Include="Resources\Shaders\test.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\Textures\BMP test.bmp" />
-    <Image Include="Resources\Textures\PNG test.png" />
+    <Image Include="Resources\Textures\Block Brown.png" />
+    <Image Include="Resources\Textures\Mario.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

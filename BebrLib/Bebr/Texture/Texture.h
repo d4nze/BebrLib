@@ -20,20 +20,10 @@ namespace bebr
 			void generateMipmap();
 			void bufferData();
 
-			static enum WrappingType
-			{
-				Repeat = 0,
-				MirroredRepeat = 1,
-				ClampToEdge = 2,
-				ClampToBorder = 3
-			};
+			enum WrappingType { Repeat = 0, MirroredRepeat, ClampToEdge, ClampToBorder };
 			void setWrapping( WrappingType type = Repeat );
 
-			static enum FilterType
-			{
-				Nearest = 0,
-				Linear = 1
-			};
+			enum FilterType { Nearest = 0, Linear };
 			void setFilter( FilterType type = Nearest );
 
 			void setPixel( int x, int y, core::Coloru color );

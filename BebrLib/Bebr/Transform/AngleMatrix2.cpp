@@ -10,13 +10,16 @@ float bebr::transform::AngleMatrix2::getAngle() const { return m_angle; }
 
 void bebr::transform::AngleMatrix2::rotate( float rotation ) { setAngle( m_angle + rotation ); }
 
-#include <cmath>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 bebr::math::Mat4& bebr::transform::AngleMatrix2::getMatrix() const
 {
 	static math::Mat4 s_matrix;
-	float s = sinf( m_angle );
-	float c = cosf( m_angle );
+	static float s_pi = M_PI;
+	float angleDegrees = m_angle * s_pi / 180.f;
+	float s = sinf( angleDegrees );
+	float c = cosf( angleDegrees );
 	s_matrix[ 0 ][ 0 ] = c;
 	s_matrix[ 1 ][ 0 ] = s;
 	s_matrix[ 0 ][ 1 ] = -s;

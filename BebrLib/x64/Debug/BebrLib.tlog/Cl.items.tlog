@@ -1,3 +1,4 @@
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Core\RectangleData.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\RectangleData.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Importer\stb_image.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\stb_image.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\System\Window.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Window.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Render\Renderer.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Renderer.obj
@@ -28,5 +29,7 @@ C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Transform\AngleMatrix2.cpp;C:\U
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Transform\ScaleMatrix2.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\ScaleMatrix2.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Transform\TransformMatrix2.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\TransformMatrix2.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Camera\CameraMatrix2.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\CameraMatrix2.obj
-C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Core\Rectangle.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Rectangle.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Texture\TextureManager.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\TextureManager.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Rectangle.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Rectangle.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Circle.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Circle.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Transform\OriginMatrix.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\OriginMatrix.obj

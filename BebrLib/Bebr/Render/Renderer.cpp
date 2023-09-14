@@ -48,7 +48,7 @@ void bebr::render::Renderer::display() const
     m_currentWindow->swapBuffers();
 }
 
-bebr::render::Renderer::Renderer() : m_currentWindow( nullptr ) 
+bebr::render::Renderer::Renderer() : m_currentWindow( nullptr ), m_currentCamera( nullptr )
 {
     if (glewInit() != GLEW_OK) { exit( -1 ); }
     glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );

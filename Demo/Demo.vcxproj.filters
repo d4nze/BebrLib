@@ -28,10 +28,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\Textures\BMP test.bmp">
+    <Image Include="Resources\Textures\Mario.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="Resources\Textures\PNG test.png">
+    <Image Include="Resources\Textures\Block Brown.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

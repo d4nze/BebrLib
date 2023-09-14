@@ -3,7 +3,7 @@
 bebr::camera::CameraMatrix2::CameraMatrix2() : 
     transform::AngleMatrix2(), transform::PositionMatrix2(), transform::ScaleMatrix2() {}
 
-bebr::camera::CameraMatrix2::CameraMatrix2( core::Rectangle rectangle ) :
+bebr::camera::CameraMatrix2::CameraMatrix2( core::RectangleData rectangle ) :
     transform::AngleMatrix2(), transform::PositionMatrix2(), transform::ScaleMatrix2()
 {
     setView( rectangle );
@@ -21,7 +21,7 @@ bebr::camera::CameraMatrix2::CameraMatrix2( math::Vector2f position, math::Vecto
     setView( position, size );
 }
 
-void bebr::camera::CameraMatrix2::setView( core::Rectangle rectangle )
+void bebr::camera::CameraMatrix2::setView( core::RectangleData rectangle )
 {
     setCenter( rectangle.position + rectangle.size / 2.f );
     setSize( rectangle.size );
@@ -39,7 +39,7 @@ void bebr::camera::CameraMatrix2::setView( math::Vector2f position, math::Vector
     setSize( size );
 }
 
-bebr::core::Rectangle bebr::camera::CameraMatrix2::getView() const
+bebr::core::RectangleData bebr::camera::CameraMatrix2::getView() const
 {
     math::Vector2f size = getSize();
     return { getCenter() - size, size };
@@ -88,12 +88,12 @@ bebr::math::Vector2f bebr::camera::CameraMatrix2::getSize() const
 
 void bebr::camera::CameraMatrix2::setAngle( float angle )
 {
-    setAngle( angle );
+    AngleMatrix2::setAngle( angle );
 }
 
 float bebr::camera::CameraMatrix2::getAngle() const
 {
-    return getAngle();
+    return AngleMatrix2::getAngle();
 }
 
 bebr::math::Mat4& bebr::camera::CameraMatrix2::getMatrix() const

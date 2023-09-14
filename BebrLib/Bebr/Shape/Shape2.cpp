@@ -3,7 +3,7 @@
 
 bebr::shader::ShaderProgram* bebr::shape::Shape2::s_program = nullptr;
 
-bebr::shape::Shape2::Shape2() : Shape<Shape2Vertex>(), transform::TransformMatrix2()
+bebr::shape::Shape2::Shape2() : Shape<Shape2Vertex>(), transform::TransformMatrix2(), transform::OriginMatrix()
 {
 	if (s_program == nullptr)
 	{
@@ -21,25 +21,18 @@ bebr::shape::Shape2::Shape2() : Shape<Shape2Vertex>(), transform::TransformMatri
 	Shape<Shape2Vertex>::m_vbl.push<float>( 2 );
 }
 
-void bebr::shape::Shape2::setVertices( std::vector<Shape2Vertex>& vertices )
-{
-	Shape<Shape2Vertex>::m_vertices = vertices;
-}
-
-void bebr::shape::Shape2::setIndices( std::vector<unsigned int>& indices )
-{
-	Shape<Shape2Vertex>::m_indices = indices;
-}
-
 #include "../Render/Renderer.h"
 #include <string>
 
 void bebr::shape::Shape2::render()
 {
 	static render::Renderer& s_renderer = render::Renderer::GetInstance();
+	static math::Mat4 s_model;
+	s_model = TransformMatrix2::getMatrix() * OriginMatrix::getMatrix();
+
 	s_program->use();
 	(*s_program)[ "u_camera" ].setMat4( s_renderer.m_currentCamera->getMatrix() );
-	(*s_program)[ "u_transform" ].setMat4( TransformMatrix2::getMatrix() );
+	(*s_program)[ "u_model" ].setMat4( s_model );
 	(*s_program)[ "u_texture" ].setInt1( 0 );
 	Shape<Shape2Vertex>::render();
 	s_program->unuse();

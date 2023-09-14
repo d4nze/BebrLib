@@ -1,22 +1,10 @@
-#include "Bebr/System/Window.h"
-#include "Bebr/System/Keyboard.h"
-#include "Bebr/Render/Renderer.h"
-#include "Bebr/Camera/CameraMatrix2.h"
+#include <Bebr/System/Window.h>
+#include <Bebr/System/Keyboard.h>
+#include <Bebr/Render/Renderer.h>
+#include <Bebr/Camera/CameraMatrix2.h>
 
-#include "Bebr/Shape/Shape2Vertex.h"
-
-#include "Bebr/Shader/ShaderSource.h"
-#include "Bebr/Shader/ShaderProgram.h"
-
-#include "Bebr/Buffer/VertexBuffer.h"
-#include "Bebr/Buffer/IndexBuffer.h"
-#include "Bebr/Render/VertexArray.h"
-#include "Bebr/Render/VertexBufferLayout.h"
-
-#include "Bebr/Transform/TransformMatrix2.h"
-#include "Bebr/Texture/TextureManager.h"
-
-#include "Bebr/Shape/Shape2.h"
+#include <Bebr/Shape/Circle.h>
+#include <Bebr/Texture/TextureManager.h>
 
 int main()
 {
@@ -26,38 +14,28 @@ int main()
 	bebr::render::Renderer& renderer = bebr::render::Renderer::GetInstance();
 	bebr::camera::CameraMatrix2 camera;
 	camera.setCenter( 0.f, 0.f );
-	camera.setSize( 640.f, 480.f );
-
-	bebr::shape::Shape2 shape;
-
-	std::vector<bebr::shape::Shape2Vertex> vertices = {
-		{ { -16.f, +16.f }, { 1.f, 1.f, 1.f, 1.f }, { 0.f, 1.f } },
-		{ { +16.f, +16.f }, { 1.f, 1.f, 1.f, 1.f }, { 1.f, 1.f } },
-		{ { +16.f, -16.f }, { 1.f, 1.f, 1.f, 1.f }, { 1.f, 0.f } },
-		{ { -16.f, -16.f }, { 1.f, 1.f, 1.f, 1.f }, { 0.f, 0.f } } 
-	};
-	std::vector<unsigned int> indices = { 0u, 1u, 2u, 0u, 3u, 2u };
-
-	shape.setVertices( vertices );
-	shape.setIndices( indices );
-	shape.setData();
-
-	shape.setData();
+	camera.setSize( 640.f / 4.f, 480.f / 4.f );
+	
+	bebr::shape::Circle shape( 0.f, 0.f, 32.f, 32.f );
+	//shape.setCount( 4 );
 
 	bebr::texture::TextureManager textureManager;
-	bebr::texture::Texture& texture = textureManager[ "Resources/Textures/PNG test.png" ];
+	bebr::texture::Texture& texture = textureManager[ "Resources/Textures/Block Brown.png" ];
 	shape.setTexture( &texture );
+	shape.setTextureRectangle( { { 0.f, 0.f }, { 16.f, 16.f } } );
 
 	while (window.isOpen())
 	{
 		window.pollEvent();
-		
+
 		if (keyboard.isKeyDown( keyboard.Esc )) { window.close(); }
 
-		if (keyboard.isKeyDown( keyboard.LeftArrow )) { camera.move( -5.f, 0.f ); }
-		if (keyboard.isKeyDown( keyboard.RightArrow )) { camera.move( +5.f, 0.f ); }
-		if (keyboard.isKeyDown( keyboard.UpArrow )) { camera.move( 0.f, +5.f ); }
-		if (keyboard.isKeyDown( keyboard.DownArrow )) { camera.move( 0.f, -5.f ); }
+		//shape.rotate( 5.f );
+
+		if (keyboard.isKeyDown( keyboard.LeftArrow )) { shape.move( -5.f, 0.f ); }
+		if (keyboard.isKeyDown( keyboard.RightArrow )) { shape.move( +5.f, 0.f ); }
+		if (keyboard.isKeyDown( keyboard.UpArrow )) { shape.move( 0.f, +5.f ); }
+		if (keyboard.isKeyDown( keyboard.DownArrow )) { shape.move( 0.f, -5.f ); }
 
 		renderer.start( &window, &camera );
 		renderer.clear( { 0.1f, 0.1f, 0.25f } );

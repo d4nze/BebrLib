@@ -21,7 +21,7 @@ namespace bebr
 			void move( math::Vector2f velocity );
 
 		protected:
-			math::Mat4& getMatrix() const; // TODO: make 'protected'
+			math::Mat4& getMatrix() const;
 
 		private:
 			float m_x, m_y;
