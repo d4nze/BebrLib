@@ -30,6 +30,7 @@ void bebr::render::Renderer::start( system::Window* window, camera::CameraMatrix
 void bebr::render::Renderer::end()
 {
     m_currentWindow = nullptr;
+    m_currentCamera = nullptr;
 }
 
 void bebr::render::Renderer::clear( float r, float g, float b, float a ) const

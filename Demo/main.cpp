@@ -17,7 +17,7 @@ int main()
 	camera.setSize( 640.f / 4.f, 480.f / 4.f );
 	
 	bebr::shape::Circle shape( 0.f, 0.f, 32.f, 32.f );
-	//shape.setCount( 4 );
+	shape.setCount( 360 );
 
 	bebr::texture::TextureManager textureManager;
 	bebr::texture::Texture& texture = textureManager[ "Resources/Textures/Block Brown.png" ];
@@ -29,6 +29,7 @@ int main()
 		window.pollEvent();
 
 		if (keyboard.isKeyDown( keyboard.Esc )) { window.close(); }
+		if (keyboard.isKeyDown( keyboard.F11 )) { window.setFullscreen(!window.getFullscreen()); }
 
 		//shape.rotate( 5.f );
 
@@ -36,6 +37,7 @@ int main()
 		if (keyboard.isKeyDown( keyboard.RightArrow )) { shape.move( +5.f, 0.f ); }
 		if (keyboard.isKeyDown( keyboard.UpArrow )) { shape.move( 0.f, +5.f ); }
 		if (keyboard.isKeyDown( keyboard.DownArrow )) { shape.move( 0.f, -5.f ); }
+		if (keyboard.isKeyDown( keyboard.R )) { shape.setPosition( 0.0, 0.0 ); }
 
 		renderer.start( &window, &camera );
 		renderer.clear( { 0.1f, 0.1f, 0.25f } );

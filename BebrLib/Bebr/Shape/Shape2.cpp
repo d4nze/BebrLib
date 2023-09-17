@@ -3,7 +3,7 @@
 
 bebr::shader::ShaderProgram* bebr::shape::Shape2::s_program = nullptr;
 
-bebr::shape::Shape2::Shape2() : Shape<Shape2Vertex>(), transform::TransformMatrix2(), transform::OriginMatrix()
+bebr::shape::Shape2::Shape2() : Shape<Shape2Vertex>(), transform::TransformMatrix2(), transform::OriginMatrix2()
 {
 	if (s_program == nullptr)
 	{
@@ -28,7 +28,7 @@ void bebr::shape::Shape2::render()
 {
 	static render::Renderer& s_renderer = render::Renderer::GetInstance();
 	static math::Mat4 s_model;
-	s_model = TransformMatrix2::getMatrix() * OriginMatrix::getMatrix();
+	s_model = TransformMatrix2::getMatrix() * OriginMatrix2::getMatrix();
 
 	s_program->use();
 	(*s_program)[ "u_camera" ].setMat4( s_renderer.m_currentCamera->getMatrix() );

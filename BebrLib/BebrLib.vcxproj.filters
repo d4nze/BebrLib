@@ -120,7 +120,7 @@
     <ClInclude Include="Bebr\Shape\Circle.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Transform\OriginMatrix.h">
+    <ClInclude Include="Bebr\Transform\OriginMatrix2.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -227,7 +227,7 @@
     <ClCompile Include="Bebr\Core\RectangleData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Transform\OriginMatrix.cpp">
+    <ClCompile Include="Bebr\Transform\OriginMatrix2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
