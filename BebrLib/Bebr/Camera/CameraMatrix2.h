@@ -30,6 +30,7 @@ namespace bebr
 			void setCenter( float x, float y );
 			void setCenter( math::Vector2f center );
 			math::Vector2f getCenter() const;
+			math::Vector2f getMousePos( math::Vector2i mousePos, math::Vector2i windowSize ) const;
 
 			void move( float x, float y );
 			void move( math::Vector2f velocity );

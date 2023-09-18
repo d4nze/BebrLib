@@ -146,13 +146,16 @@ bool bebr::system::Window::getFullscreen()
     return (style & WS_OVERLAPPEDWINDOW) == 0;
 }
 
+#include "Mouse.h"
 #include "Keyboard.h"
 #include <thread>
 
 void bebr::system::Window::pollEvent()
 {
     static Keyboard& keyboard = Keyboard::GetInstance();
+    static Mouse& mouse = Mouse::GetInstance();
     keyboard.update();
+    ShowCursor( 1 );
 
     MSG msg;
     while (PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ))
@@ -167,6 +170,12 @@ void bebr::system::Window::pollEvent()
 
     m_width = clientRect.right - clientRect.left;
     m_height = clientRect.bottom - clientRect.top;
+
+    POINT mousePos = { 0, 0 };
+    GetCursorPos( &mousePos );
+    ScreenToClient( m_hWnd, &mousePos );
+    mouse.m_x = mousePos.x;
+    mouse.m_y = mousePos.y * -1;
 
     if (m_fpsLimit == 0u) { return; }
 

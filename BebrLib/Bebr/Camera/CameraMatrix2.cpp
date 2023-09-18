@@ -60,6 +60,21 @@ bebr::math::Vector2f bebr::camera::CameraMatrix2::getCenter() const
     return getPosition() * -1.f;
 }
 
+bebr::math::Vector2f bebr::camera::CameraMatrix2::getMousePos( math::Vector2i mousePos, math::Vector2i windowSize ) const
+{
+    math::Vector2f localPos = math::Vector2f( mousePos );
+    localPos.x /= static_cast<float>(windowSize.x);
+    localPos.y /= static_cast<float>(windowSize.y);
+    math::Vector2f size = getSize();
+    localPos.x *= size.x;
+    localPos.y *= size.y;
+    size /= 2.f;
+    localPos.x -= size.x;
+    localPos.y += size.y;
+    localPos += getCenter();
+    return localPos;
+}
+
 void bebr::camera::CameraMatrix2::move( float x, float y )
 {
     PositionMatrix2::move( -x, -y );

@@ -179,6 +179,7 @@
     <ClInclude Include="Bebr\Shape\Rectangle.h" />
     <ClInclude Include="Bebr\Shape\Circle.h" />
     <ClInclude Include="Bebr\Transform\OriginMatrix2.h" />
+    <ClInclude Include="Bebr\System\Mouse.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bebr\Core\RectangleData.cpp" />
@@ -216,6 +217,7 @@
     <ClCompile Include="Bebr\Shape\Rectangle.cpp" />
     <ClCompile Include="Bebr\Shape\Circle.cpp" />
     <ClCompile Include="Bebr\Transform\OriginMatrix2.cpp" />
+    <ClCompile Include="Bebr\System\Mouse.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

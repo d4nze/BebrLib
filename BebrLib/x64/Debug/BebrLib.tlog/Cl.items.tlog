@@ -32,4 +32,5 @@ C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Camera\CameraMatrix2.cpp;C:\Use
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Texture\TextureManager.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\TextureManager.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Rectangle.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Rectangle.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Circle.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Circle.obj
-C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Transform\OriginMatrix.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\OriginMatrix.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Transform\OriginMatrix2.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\OriginMatrix2.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\System\Mouse.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Mouse.obj

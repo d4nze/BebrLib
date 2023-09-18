@@ -123,6 +123,9 @@
     <ClInclude Include="Bebr\Transform\OriginMatrix2.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Bebr\System\Mouse.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bebr\System\Window.cpp">
@@ -228,6 +231,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Bebr\Transform\OriginMatrix2.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Bebr\System\Mouse.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

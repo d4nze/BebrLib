@@ -1,8 +1,1 @@
-﻿  Shape2.cpp
-  Rectangle.cpp
-  Circle.cpp
-C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\BebrLib\Bebr\Shape\Circle.cpp(49,26): warning C4305: инициализация: усечение из "double" в "float"
-  OriginMatrix2.cpp
-  Создание кода...
-glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR уже определен в opengl32.lib(OPENGL32.dll); второе определение пропущено
-  BebrLib.vcxproj -> C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\x64\Debug\BebrLib.lib
+﻿  BebrLib.vcxproj -> C:\Users\Danii\source\repos\BebrLib\x64\Debug\BebrLib.lib
