@@ -1,1 +1,3 @@
-﻿  BebrLib.vcxproj -> C:\Users\Danii\source\repos\BebrLib\x64\Debug\BebrLib.lib
+﻿  TransformMatrix2.cpp
+glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR уже определен в opengl32.lib(OPENGL32.dll); второе определение пропущено
+  BebrLib.vcxproj -> C:\Users\Danii\Documents\Visual Studio 2022\Projects\BebrLib\x64\Debug\BebrLib.lib

@@ -2,7 +2,6 @@
 #include "Shape.h"
 #include "Shape2Vertex.h"
 #include "../Transform/TransformMatrix2.h"
-#include "../Transform/OriginMatrix2.h"
 #include "../Shader/ShaderProgram.h"
 
 namespace bebr
@@ -11,8 +10,7 @@ namespace bebr
 	{
 		class Shape2 : 
 			public Shape<Shape2Vertex>, 
-			public transform::TransformMatrix2,
-			public transform::OriginMatrix2
+			public transform::TransformMatrix2
 		{
 		public:
 			Shape2();
