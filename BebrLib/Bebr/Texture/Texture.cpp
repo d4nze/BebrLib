@@ -19,7 +19,6 @@ void bebr::texture::Texture::load( const char* path )
 	if (m_data != nullptr) { stbi_image_free( m_data ); }
 	stbi_set_flip_vertically_on_load( true );
 	m_data = stbi_load( path, &m_width, &m_height, &m_colors, STBI_rgb_alpha );
-	// importer::image::ConvertBGRtoRGB( m_data, m_width, m_height, m_colors );
 }
 
 void bebr::texture::Texture::create( int width, int height )
@@ -86,10 +85,13 @@ void bebr::texture::Texture::setPixel( int x, int y, core::Coloru color )
 {
 	if (m_data == nullptr) { return; }
 	int pos = m_width * m_colors * y + x * m_colors;
-	m_data[ pos + 0 ] = color.r;
-	m_data[ pos + 1 ] = color.g;
-	m_data[ pos + 2 ] = color.b;
-	m_data[ pos + 3 ] = color.a;
+	if (m_colors >= 3)
+	{
+		m_data[pos + 0] = color.r;
+		m_data[pos + 1] = color.g;
+		m_data[pos + 2] = color.b;
+	}
+	if (m_colors == 4) { m_data[pos + 3] = color.a; }
 }
 
 bebr::core::Coloru bebr::texture::Texture::getPixel( int x, int y )

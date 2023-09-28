@@ -7,7 +7,7 @@ bebr::shape::Rectangle::Rectangle() : Shape2(), m_size()
 	setData();
 }
 
-bebr::shape::Rectangle::Rectangle( core::RectangleData rectangle ) : Shape2()
+bebr::shape::Rectangle::Rectangle( core::Rect rectangle ) : Shape2()
 {
 	initVertices();
 	setPosition( rectangle.position );
@@ -66,7 +66,7 @@ void bebr::shape::Rectangle::setColor( core::Colorf color, Corner corner )
 
 bebr::core::Colorf bebr::shape::Rectangle::getColor( Corner corner ) const { return m_vertices[ corner ].color; }
 
-void bebr::shape::Rectangle::setTextureRectangle( core::RectangleData textureRectangle )
+void bebr::shape::Rectangle::setTextureRectangle( core::Rect textureRectangle )
 {
 	if (m_texture == nullptr) { return; }
 	m_textureRectangle = textureRectangle;
@@ -82,12 +82,16 @@ void bebr::shape::Rectangle::setTextureRectangle( core::RectangleData textureRec
 	m_vertices[ BottomLeft ].texCoords = textureRectangle.position;
 }
 
-bebr::core::RectangleData bebr::shape::Rectangle::getTextureRectangle() const { return m_textureRectangle; }
+bebr::core::Rect bebr::shape::Rectangle::getTextureRectangle() const { return m_textureRectangle; }
 
 void bebr::shape::Rectangle::initVertices() 
 { 
 	m_vertices = std::vector<Shape2Vertex>( 4 );
 	setColor( core::Colorf::White );
+	m_vertices[TopLeft].texCoords = math::Vector2f{ 0.f, 1.f };
+	m_vertices[TopRight].texCoords = math::Vector2f{ 1.f, 1.f };
+	m_vertices[BottomRight].texCoords = math::Vector2f{ 1.f, 0.f };
+	m_vertices[BottomLeft].texCoords = math::Vector2f{ 0.f, 0.f };
 }
 
 void bebr::shape::Rectangle::initIndices() { m_indices = { 0u, 1u, 2u, 0u, 3u, 2u }; }

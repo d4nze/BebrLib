@@ -16,4 +16,9 @@ void bebr::system::Mouse::setVisible( bool visible ) { m_visible = visible; }
 
 bool bebr::system::Mouse::getVisible() const { return m_visible; }
 
-bebr::system::Mouse::Mouse() : m_x( 0 ), m_y( 0 ), m_visible( true ) {}
+void bebr::system::Mouse::setIcon( Icon icon )
+{
+	m_icon = icon;
+}
+
+bebr::system::Mouse::Mouse() : m_x( 0 ), m_y( 0 ), m_visible( true ), m_icon( Standart ) {}

@@ -108,7 +108,7 @@
     <ClInclude Include="Bebr\Camera\CameraMatrix2.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Bebr\Core\RectangleData.h">
+    <ClInclude Include="Bebr\Core\Rect.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Bebr\Texture\TextureManager.h">
@@ -127,6 +127,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Bebr\Collision\RectCollider.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Bebr\Texture\StandartTexture.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -230,7 +233,7 @@
     <ClCompile Include="Bebr\Shape\Circle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Bebr\Core\RectangleData.cpp">
+    <ClCompile Include="Bebr\Core\Rect.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Bebr\Transform\OriginMatrix2.cpp">
@@ -240,6 +243,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Bebr\Collision\RectCollider.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Bebr\Texture\StandartTexture.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

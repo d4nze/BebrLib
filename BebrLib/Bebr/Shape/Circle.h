@@ -1,6 +1,6 @@
 #pragma once
 #include "Shape2.h"
-#include "../Core/RectangleData.h"
+#include "../Core/Rect.h"
 
 namespace bebr
 {
@@ -10,7 +10,7 @@ namespace bebr
 		{
 		public:
 			Circle();
-			Circle( core::RectangleData rectangle );
+			Circle( core::Rect rectangle );
 			Circle( float x, float y, float radius );
 			Circle( math::Vector2f position, float radius );
 			Circle( float x, float y, float width, float height );
@@ -27,13 +27,13 @@ namespace bebr
 			void setColor( core::Colorf color );
 			core::Colorf getColor() const;
 
-			void setTextureRectangle( core::RectangleData textureRectangle );
-			core::RectangleData getTextureRectangle() const;
+			void setTextureRectangle( core::Rect textureRectangle );
+			core::Rect getTextureRectangle() const;
 
 		protected:
 			int m_count;
 			math::Vector2f m_size;
-			core::RectangleData m_textureRectangle;
+			core::Rect m_textureRectangle;
 		};
 	}
 }

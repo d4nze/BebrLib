@@ -155,7 +155,7 @@ void bebr::system::Window::pollEvent()
     static Keyboard& keyboard = Keyboard::GetInstance();
     static Mouse& mouse = Mouse::GetInstance();
     keyboard.update();
-    ShowCursor( 1 );
+    ShowCursor( mouse.m_visible ? 1 : 0 );
 
     MSG msg;
     while (PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ))
@@ -219,6 +219,7 @@ LRESULT CALLBACK bebr::system::Window::WindowProc( HWND hwnd, UINT uMsg, WPARAM 
 
     Window* pThis = reinterpret_cast<Window*>(GetWindowLongPtr( hwnd, GWLP_USERDATA ));
     static Keyboard& keyboard = Keyboard::GetInstance();
+    static Mouse& mouse = Mouse::GetInstance();
 
     if (pThis) {
         switch (uMsg) {
@@ -238,6 +239,11 @@ LRESULT CALLBACK bebr::system::Window::WindowProc( HWND hwnd, UINT uMsg, WPARAM 
         case WM_KEYUP:
         {
             keyboard.setKeyState( static_cast<Keyboard::Key>(static_cast<int>(wParam)), Keyboard::KeyState::Released );
+            break;
+        }
+        case WM_SETCURSOR:
+        {
+
             break;
         }
         }

@@ -174,16 +174,17 @@
     <ClInclude Include="Bebr\Transform\ScaleMatrix2.h" />
     <ClInclude Include="Bebr\Transform\TransformMatrix2.h" />
     <ClInclude Include="Bebr\Camera\CameraMatrix2.h" />
-    <ClInclude Include="Bebr\Core\RectangleData.h" />
+    <ClInclude Include="Bebr\Core\Rect.h" />
     <ClInclude Include="Bebr\Texture\TextureManager.h" />
     <ClInclude Include="Bebr\Shape\Rectangle.h" />
     <ClInclude Include="Bebr\Shape\Circle.h" />
     <ClInclude Include="Bebr\Transform\OriginMatrix2.h" />
     <ClInclude Include="Bebr\System\Mouse.h" />
     <ClInclude Include="Bebr\Collision\RectCollider.h" />
+    <ClInclude Include="Bebr\Texture\StandartTexture.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bebr\Core\RectangleData.cpp" />
+    <ClCompile Include="Bebr\Core\Rect.cpp" />
     <ClCompile Include="Bebr\Importer\stb_image.cpp" />
     <ClCompile Include="Bebr\System\Window.cpp" />
     <ClCompile Include="Bebr\Render\Renderer.cpp" />
@@ -220,6 +221,7 @@
     <ClCompile Include="Bebr\Transform\OriginMatrix2.cpp" />
     <ClCompile Include="Bebr\System\Mouse.cpp" />
     <ClCompile Include="Bebr\Collision\RectCollider.cpp" />
+    <ClCompile Include="Bebr\Texture\StandartTexture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

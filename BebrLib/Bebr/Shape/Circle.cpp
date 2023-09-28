@@ -4,9 +4,10 @@ bebr::shape::Circle::Circle() : Shape2()
 {
 	setSize( 0.f, 0.f );
 	setCount( 0 );
+	setTextureRectangle({ { 0.f, 0.f }, { 1.f, 1.f } });
 }
 
-bebr::shape::Circle::Circle( core::RectangleData rectangle ) : Shape2()
+bebr::shape::Circle::Circle( core::Rect rectangle ) : Shape2()
 {
 	setPosition( rectangle.position );
 	setSize( rectangle.size );
@@ -99,7 +100,7 @@ void bebr::shape::Circle::setColor( core::Colorf color )
 
 bebr::core::Colorf bebr::shape::Circle::getColor() const { return m_vertices[ 0 ].color; }
 
-void bebr::shape::Circle::setTextureRectangle( core::RectangleData textureRectangle )
+void bebr::shape::Circle::setTextureRectangle( core::Rect textureRectangle )
 {
 	if (m_texture == nullptr) { return; }
 	m_textureRectangle = textureRectangle;
@@ -117,4 +118,4 @@ void bebr::shape::Circle::setTextureRectangle( core::RectangleData textureRectan
 	}
 }
 
-bebr::core::RectangleData bebr::shape::Circle::getTextureRectangle() const { return m_textureRectangle; }
+bebr::core::Rect bebr::shape::Circle::getTextureRectangle() const { return m_textureRectangle; }

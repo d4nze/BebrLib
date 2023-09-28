@@ -1,7 +1,8 @@
 #include "Shape.h"
+#include "../Texture/StandartTexture.h"
 
 template<typename VertexType>
-bebr::shape::Shape<VertexType>::Shape() : m_texture( nullptr ) {}
+bebr::shape::Shape<VertexType>::Shape() : m_texture(&texture::StandartTexture::GetInstance()) {}
 
 template<typename VertexType>
 void bebr::shape::Shape<VertexType>::setTexture( texture::Texture* texture )

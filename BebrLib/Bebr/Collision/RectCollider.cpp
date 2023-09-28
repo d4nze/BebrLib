@@ -1,9 +1,9 @@
 #include "RectCollider.h"
 
-bebr::collision::RectCollider::RectCollider() : core::RectangleData{ { 0.f, 0.f }, { 0.f, 0.f } } {}
+bebr::collision::RectCollider::RectCollider() : core::Rect{ { 0.f, 0.f }, { 0.f, 0.f } } {}
 
 bebr::collision::RectCollider::RectCollider( shape::Rectangle& rectangle ) :
-	core::RectangleData{ rectangle.getPosition() - rectangle.getOrigin(), rectangle.getSize() }
+	core::Rect{ rectangle.getPosition() - rectangle.getOrigin(), rectangle.getSize() }
 {
 	math::Vector2f scale = rectangle.getScale();
 	size.x *= scale.x;
@@ -11,10 +11,10 @@ bebr::collision::RectCollider::RectCollider( shape::Rectangle& rectangle ) :
 }
 
 bebr::collision::RectCollider::RectCollider( float x, float y, float width, float height ) :
-	core::RectangleData{ { x, y }, { width, height } } {}
+	core::Rect{ { x, y }, { width, height } } {}
 
 bebr::collision::RectCollider::RectCollider( math::Vector2f position, math::Vector2f size ) :
-	core::RectangleData{ position, size } {}
+	core::Rect{ position, size } {}
 
 bool bebr::collision::RectCollider::operator()( RectCollider& other )
 {

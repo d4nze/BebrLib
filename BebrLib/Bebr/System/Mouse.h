@@ -15,6 +15,10 @@ namespace bebr
 			void setVisible( bool visible );
 			bool getVisible() const;
 
+			enum Icon { Arrow, Loading, Select, Standart };
+			void setIcon( Icon icon );
+			Icon getIcon() const;
+
 		private:
 			Mouse();
 
@@ -22,6 +26,7 @@ namespace bebr
 
 			int m_x, m_y;
 			bool m_visible;
+			Icon m_icon;
 		};
 	}
 }

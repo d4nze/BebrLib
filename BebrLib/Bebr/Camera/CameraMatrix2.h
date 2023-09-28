@@ -1,7 +1,7 @@
 #pragma once
 #include "../Math/Matrix.h"
 #include "../Math/Vector2.h"
-#include "../Core/RectangleData.h"
+#include "../Core/Rect.h"
 
 #include "../Transform/AngleMatrix2.h"
 #include "../Transform/PositionMatrix2.h"
@@ -18,14 +18,14 @@ namespace bebr
 		{
 		public:
 			CameraMatrix2();
-			CameraMatrix2( core::RectangleData rectangle );
+			CameraMatrix2( core::Rect rectangle );
 			CameraMatrix2( float x, float y, float width, float height );
 			CameraMatrix2( math::Vector2f position, math::Vector2f size );
 
-			void setView( core::RectangleData rectangle );
+			void setView( core::Rect rectangle );
 			void setView( float x, float y, float width, float height );
 			void setView( math::Vector2f position, math::Vector2f size );
-			core::RectangleData getView() const;
+			core::Rect getView() const;
 
 			void setCenter( float x, float y );
 			void setCenter( math::Vector2f center );

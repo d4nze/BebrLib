@@ -1,12 +1,12 @@
 #pragma once
-#include "../Core/RectangleData.h"
+#include "../Core/Rect.h"
 #include "../Shape/Rectangle.h"
 
 namespace bebr
 {
 	namespace collision
 	{
-		class RectCollider : public core::RectangleData
+		class RectCollider : public core::Rect
 		{
 		public:
 			RectCollider();
