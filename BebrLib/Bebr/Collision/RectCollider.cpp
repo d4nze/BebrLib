@@ -3,8 +3,9 @@
 bebr::collision::RectCollider::RectCollider() : core::Rect{ { 0.f, 0.f }, { 0.f, 0.f } } {}
 
 bebr::collision::RectCollider::RectCollider( shape::Rectangle& rectangle ) :
-	core::Rect{ rectangle.getPosition() - rectangle.getOrigin(), rectangle.getSize() }
+	core::Rect{ rectangle.getPosition(), rectangle.getSize() }
 {
+	position -= rectangle.getOrigin();
 	math::Vector2f scale = rectangle.getScale();
 	size.x *= scale.x;
 	size.y *= scale.y;

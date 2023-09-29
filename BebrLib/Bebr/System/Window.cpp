@@ -241,11 +241,6 @@ LRESULT CALLBACK bebr::system::Window::WindowProc( HWND hwnd, UINT uMsg, WPARAM 
             keyboard.setKeyState( static_cast<Keyboard::Key>(static_cast<int>(wParam)), Keyboard::KeyState::Released );
             break;
         }
-        case WM_SETCURSOR:
-        {
-
-            break;
-        }
         }
     }
 

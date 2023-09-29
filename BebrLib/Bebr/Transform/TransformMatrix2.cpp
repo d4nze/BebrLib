@@ -8,9 +8,9 @@ bebr::transform::TransformMatrix2::TransformMatrix2( math::Vector2f position, fl
 bebr::math::Mat4& bebr::transform::TransformMatrix2::getMatrix() const
 {
 	static math::Mat4 s_matrix;
-	s_matrix = PositionMatrix2::getMatrix(); 
+	s_matrix = PositionMatrix2::getMatrix();
+	s_matrix *= AngleMatrix2::getMatrix();
 	s_matrix *= OriginMatrix2::getMatrix();
 	s_matrix *= ScaleMatrix2::getMatrix();
-	s_matrix *= AngleMatrix2::getMatrix();
 	return s_matrix;
 }
