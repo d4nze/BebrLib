@@ -182,6 +182,8 @@
     <ClInclude Include="Bebr\System\Mouse.h" />
     <ClInclude Include="Bebr\Collision\RectCollider.h" />
     <ClInclude Include="Bebr\Texture\StandartTexture.h" />
+    <ClInclude Include="Bebr\Collision\RectColliderPro.h" />
+    <ClInclude Include="Bebr\Core\RectPro.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bebr\Core\Rect.cpp" />
@@ -222,6 +224,8 @@
     <ClCompile Include="Bebr\System\Mouse.cpp" />
     <ClCompile Include="Bebr\Collision\RectCollider.cpp" />
     <ClCompile Include="Bebr\Texture\StandartTexture.cpp" />
+    <ClCompile Include="Bebr\Collision\RectColliderPro.cpp" />
+    <ClCompile Include="Bebr\Core\RectPro.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

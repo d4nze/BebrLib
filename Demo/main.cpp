@@ -1,11 +1,10 @@
-#include <Bebr/System/Mouse.h>
-#include <Bebr/System/Window.h>
+#include <Bebr/Collision/RectColliderPro.h>
+#include <Bebr/Camera/CameraMatrix2.h>
 #include <Bebr/Shape/Rectangle.h>
 #include <Bebr/System/Keyboard.h>
 #include <Bebr/Render/Renderer.h>
-#include <Bebr/Camera/CameraMatrix2.h>
-#include <Bebr/Collision/RectCollider.h>
-#include <Bebr/Texture/StandartTexture.h>
+#include <Bebr/System/Window.h>
+#include <Bebr/System/Mouse.h>
 
 int main()
 {
@@ -21,17 +20,16 @@ int main()
 
 	bebr::shape::Rectangle shape1(0.f, 0.f, 32.f, 32.f);
 	shape1.setOrigin(16.f, 16.f);
-	shape1.setScale(1.f, 2.f);
-	shape1.setColor(bebr::core::Colorf::Blue);
-	shape1.setTexture(&bebr::texture::StandartTexture::GetInstance());
-	bebr::shape::Rectangle shape2(0.f, 0.f, 32.f, 32.f);
-	shape2.setOrigin(32.f, 32.f);
-	shape2.setScale({ 2.f, 2.f });
-	shape2.setColor(bebr::core::Colorf::Red);
-	shape2.setTexture(&bebr::texture::StandartTexture::GetInstance());
+	// shape1.setScale(1.f, 1.f);
+	shape1.setAngle(15.f);
 
-	bebr::collision::RectCollider collider1;
-	bebr::collision::RectCollider collider2;
+	bebr::shape::Rectangle shape2(0.f, 0.f, 64.f, 64.f);
+	shape2.setOrigin(32.f, 32.f);
+	// shape2.setScale({ 1.f, 1.f });
+	shape2.setColor(bebr::core::Colorf::Red);
+
+	bebr::collision::RectColliderPro collider1;
+	bebr::collision::RectColliderPro collider2;
 
 	while (window.isOpen())
 	{
@@ -40,18 +38,16 @@ int main()
 		if (keyboard.isKeyDown(keyboard.Esc)) { window.close(); }
 		if (keyboard.isKeyPressed(keyboard.F11)) { window.setFullscreen(!window.getFullscreen()); }
 
+		if (keyboard.isKeyPressed(keyboard.LeftArrow)) { shape1.rotate(-15.f); }
+		if (keyboard.isKeyPressed(keyboard.RightArrow)) { shape1.rotate(15.f); }
+		if (keyboard.isKeyPressed(keyboard.A)) { shape2.rotate(-15.f); }
+		if (keyboard.isKeyPressed(keyboard.D)) { shape2.rotate(15.f); }
+
 		collider1 = shape1;
 		collider2 = shape2;
 
-		//shape1.rotate(1.f);
-		if (collider1(collider2)) { shape1.setColor(bebr::core::Colorf::Green); }
+		if (collider1.collides(collider2) || collider2.collides(collider1)) { shape1.setColor(bebr::core::Colorf::Green); }
 		else { shape1.setColor(bebr::core::Colorf::Blue); }
-
-		if (keyboard.isKeyDown(keyboard.LeftArrow)) { camera.move(-5.f, 0.f); }
-		if (keyboard.isKeyDown(keyboard.RightArrow)) { camera.move(+5.f, 0.f); }
-		if (keyboard.isKeyDown(keyboard.UpArrow)) { camera.move(0.f, +5.f); }
-		if (keyboard.isKeyDown(keyboard.DownArrow)) { camera.move(0.f, -5.f); }
-		if (keyboard.isKeyDown(keyboard.R)) { camera.setCenter(0.0, 0.0); }
 
 		shape1.setPosition(camera.getMousePos(mouse.getPosition(), window.getSize()));
 

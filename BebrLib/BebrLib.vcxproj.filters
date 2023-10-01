@@ -132,6 +132,12 @@
     <ClInclude Include="Bebr\Texture\StandartTexture.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Bebr\Collision\RectColliderPro.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Bebr\Core\RectPro.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bebr\System\Window.cpp">
@@ -246,6 +252,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Bebr\Texture\StandartTexture.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Bebr\Collision\RectColliderPro.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Bebr\Core\RectPro.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #pragma once
 #include "../Core/Rect.h"
 #include "../Shape/Rectangle.h"
+//#include "RectColliderPro.h"
 
 namespace bebr
 {
@@ -10,15 +11,17 @@ namespace bebr
 		{
 		public:
 			RectCollider();
+			RectCollider(const core::Rect& rect);
 			RectCollider( shape::Rectangle& rectangle );
 			RectCollider( float x, float y, float width, float height );
 			RectCollider( math::Vector2f position, math::Vector2f size );
 
-			bool operator()( RectCollider& other );
-			bool operator()( RectCollider other, math::Vector2f velocity );
-			bool operator()( RectCollider other, float moveX, float moveY );
+			bool collides( Rect& other ) const;
+			bool collides( Rect other, math::Vector2f velocity ) const;
+			bool collides( Rect other, float moveX, float moveY ) const;
 
-			void operator=( shape::Rectangle& rectangle );
+			bool contains(float x, float y) const;
+			bool contains(math::Vector2f point) const;
 		};
 	}
 }

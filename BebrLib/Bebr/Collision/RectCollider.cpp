@@ -2,6 +2,8 @@
 
 bebr::collision::RectCollider::RectCollider() : core::Rect{ { 0.f, 0.f }, { 0.f, 0.f } } {}
 
+bebr::collision::RectCollider::RectCollider(const core::Rect& rect) : core::Rect(rect) {}
+
 bebr::collision::RectCollider::RectCollider( shape::Rectangle& rectangle ) :
 	core::Rect{ rectangle.getPosition(), rectangle.getSize() }
 {
@@ -17,7 +19,7 @@ bebr::collision::RectCollider::RectCollider( float x, float y, float width, floa
 bebr::collision::RectCollider::RectCollider( math::Vector2f position, math::Vector2f size ) :
 	core::Rect{ position, size } {}
 
-bool bebr::collision::RectCollider::operator()( RectCollider& other )
+bool bebr::collision::RectCollider::collides( Rect& other ) const
 {
 	return position.x + size.x >= other.position.x
 		&& position.x <= other.position.x + other.size.x
@@ -25,24 +27,27 @@ bool bebr::collision::RectCollider::operator()( RectCollider& other )
 		&& position.y <= other.position.y + other.size.y;
 }
 
-bool bebr::collision::RectCollider::operator()( RectCollider other, math::Vector2f velocity )
+bool bebr::collision::RectCollider::collides(Rect other, math::Vector2f velocity ) const
 {
 	other.position -= velocity;
-	return (*this)(other);
+	return collides(other);
 }
 
-bool bebr::collision::RectCollider::operator()( RectCollider other, float moveX, float moveY )
+bool bebr::collision::RectCollider::collides(Rect other, float moveX, float moveY ) const
 {
 	other.position.x -= moveX;
 	other.position.y -= moveY;
-	return (*this)(other);
+	return collides(other);
 }
 
-void bebr::collision::RectCollider::operator=( shape::Rectangle& rectangle )
+bool bebr::collision::RectCollider::contains(float x, float y) const
 {
-	position = rectangle.getPosition() - rectangle.getOrigin();
-	size = rectangle.getSize();
-	math::Vector2f scale = rectangle.getScale();
-	size.x *= scale.x;
-	size.y *= scale.y;
+	return x >= position.x && x <= position.x + size.x
+		&& y >= position.y && y <= position.y + size.y;
+}
+
+bool bebr::collision::RectCollider::contains(math::Vector2f point) const
+{
+	return point.x >= position.x && point.x <= position.x + size.x
+		&& point.y >= position.y && point.y <= position.y + size.y;
 }

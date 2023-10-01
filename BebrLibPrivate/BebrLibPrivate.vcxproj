@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bebr\Priv\Constants.h" />
     <ClInclude Include="Bebr\Priv\Macroses.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bebr\Priv\Constants.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
