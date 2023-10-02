@@ -171,12 +171,6 @@ void bebr::system::Window::pollEvent()
     m_width = clientRect.right - clientRect.left;
     m_height = clientRect.bottom - clientRect.top;
 
-    POINT mousePos = { 0, 0 };
-    GetCursorPos( &mousePos );
-    ScreenToClient( m_hWnd, &mousePos );
-    mouse.m_x = mousePos.x;
-    mouse.m_y = mousePos.y * -1;
-
     if (m_fpsLimit == 0u) { return; }
 
     auto currentTime = std::chrono::high_resolution_clock::now();
@@ -209,40 +203,43 @@ void bebr::system::Window::swapBuffers()
     SwapBuffers( m_hDC );
 }
 
-LRESULT CALLBACK bebr::system::Window::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT CALLBACK bebr::system::Window::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     if (uMsg == WM_CREATE) {
         LPCREATESTRUCT pCreate = reinterpret_cast<LPCREATESTRUCT>(lParam);
         Window* pThis = reinterpret_cast<Window*>(pCreate->lpCreateParams);
-        SetWindowLongPtr( hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis) );
+        SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
     }
 
-    Window* pThis = reinterpret_cast<Window*>(GetWindowLongPtr( hwnd, GWLP_USERDATA ));
+    Window* pThis = reinterpret_cast<Window*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
     static Keyboard& keyboard = Keyboard::GetInstance();
     static Mouse& mouse = Mouse::GetInstance();
 
     if (pThis) {
         switch (uMsg) {
         case WM_CLOSE:
-            DestroyWindow( hwnd );
+            DestroyWindow(hwnd);
             break;
         case WM_DESTROY:
-            PostQuitMessage( 0 );
+            PostQuitMessage(0);
             return 0;
+        case WM_SETCURSOR:
+            if (LOWORD(lParam) == HTCLIENT) { mouse.updateIcon(); }
+            break;
         case WM_KEYDOWN:
         {
             Keyboard::Key keyCode = static_cast<Keyboard::Key>(static_cast<int>(wParam));
-            Keyboard::KeyState state = keyboard.getKeyState( keyCode ) == Keyboard::KeyState::Down ? Keyboard::KeyState::Down : Keyboard::KeyState::Pressed;
-            keyboard.setKeyState( keyCode, state );
+            Keyboard::KeyState state = keyboard.getKeyState(keyCode) == Keyboard::KeyState::Down ? Keyboard::KeyState::Down : Keyboard::KeyState::Pressed;
+            keyboard.setKeyState(keyCode, state);
             break;
         }
         case WM_KEYUP:
         {
-            keyboard.setKeyState( static_cast<Keyboard::Key>(static_cast<int>(wParam)), Keyboard::KeyState::Released );
+            keyboard.setKeyState(static_cast<Keyboard::Key>(static_cast<int>(wParam)), Keyboard::KeyState::Released);
             break;
         }
         }
     }
 
-    return DefWindowProc( hwnd, uMsg, wParam, lParam );
+    return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }

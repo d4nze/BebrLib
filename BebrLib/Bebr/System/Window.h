@@ -11,6 +11,7 @@ namespace bebr
     namespace render { class Renderer; }
     namespace system
     {
+        class Mouse;
         class Window {
         public:
             Window( int width, int height, const char* title );
@@ -53,6 +54,7 @@ namespace bebr
             void operator=( const Window& ) = delete;
 
             friend class render::Renderer;
+            friend class Mouse;
         };
     }
 }

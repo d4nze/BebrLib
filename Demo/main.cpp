@@ -46,10 +46,10 @@ int main()
 		collider1 = shape1;
 		collider2 = shape2;
 
-		if (collider1.collides(collider2) || collider2.collides(collider1)) { shape1.setColor(bebr::core::Colorf::Green); }
-		else { shape1.setColor(bebr::core::Colorf::Blue); }
+		if (collider1.collides(collider2) || collider2.collides(collider1)) { shape1.setColor(bebr::core::Colorf::Green); mouse.setIcon(mouse.Select); }
+		else { shape1.setColor(bebr::core::Colorf::Blue); mouse.setIcon(mouse.Arrow); }
 
-		shape1.setPosition(camera.getMousePos(mouse.getPosition(), window.getSize()));
+		shape1.setPosition(camera.getMousePos(mouse.getPosition(window), window.getSize()));
 
 		renderer.start(&window, &camera);
 		renderer.clear({ 0.1f, 0.1f, 0.25f });
