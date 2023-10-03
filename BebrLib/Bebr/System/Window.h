@@ -23,18 +23,18 @@ namespace bebr
             void setMaxFrameRate( unsigned int maxFPS );
             void setFullscreen( bool fullscreen );
 
-            math::Vector2i getSize();
-            const char* getTitle();
-            bool isOpen();
-            unsigned int getMaxFrameRate();
-            bool getFullscreen();
+            math::Vector2i getSize() const;
+            const char* getTitle() const;
+            bool isOpen() const;
+            unsigned int getMaxFrameRate() const;
+            bool getFullscreen() const;
 
             void pollEvent();
-            void close();
+            void close() const;
 
         private:
-            void makeCurrent();
-            void swapBuffers();
+            void makeCurrent() const;
+            void swapBuffers() const;
 
             static LRESULT CALLBACK WindowProc( HWND, UINT, WPARAM, LPARAM );
 

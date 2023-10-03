@@ -45,37 +45,45 @@ bebr::math::Vector2i bebr::system::Mouse::getPosition(const Window& window) cons
 	return { mousePos.x, -mousePos.y };
 }
 
-void bebr::system::Mouse::setVisible( bool visible ) { m_visible = visible; }
-
-bool bebr::system::Mouse::getVisible() const { return m_visible; }
-
-void bebr::system::Mouse::setIcon( Icon icon )
-{
-	m_icon = icon;
-}
+void bebr::system::Mouse::setIcon( Icon icon ) { m_icon = icon; }
 
 bebr::system::Mouse::Icon bebr::system::Mouse::getIcon() const { return m_icon; }
 
-bebr::system::Mouse::Mouse() : m_visible( true ), m_icon( Arrow ) {}
+bebr::system::Mouse::Mouse() : m_icon( Arrow ) {}
 
 void bebr::system::Mouse::updateIcon() const
 {
-	if (!m_visible) 
-	{ 
-		SetCursor(nullptr);
-		return;
-	}
 	HCURSOR icon = nullptr;
 	switch (m_icon)
 	{
 	case Icon::Arrow:
-		icon = LoadCursor(nullptr, IDC_ARROW); break;
-	case Icon::Loading:
-		icon = LoadCursor(nullptr, IDC_WAIT); break;
-	case Icon::Select:
-		icon = LoadCursor(nullptr, IDC_HAND); break;
+		icon = LoadCursor( nullptr, IDC_ARROW ); break;
+	case Icon::ArrowLoad:
+		icon = LoadCursor( nullptr, IDC_APPSTARTING ); break;
+	case Icon::Wait:
+		icon = LoadCursor( nullptr, IDC_WAIT ); break;
+	case Icon::Hand:
+		icon = LoadCursor( nullptr, IDC_HAND ); break;
+	case Icon::Text:
+		icon = LoadCursor( nullptr, IDC_IBEAM ); break;
+	case Icon::Cross:
+		icon = LoadCursor( nullptr, IDC_CROSS ); break;
+	case Icon::ResizeX:
+		icon = LoadCursor( nullptr, IDC_SIZEWE ); break;
+	case Icon::ResizeY:
+		icon = LoadCursor( nullptr, IDC_SIZENS ); break;
+	case Icon::ResizeXY1:
+		icon = LoadCursor( nullptr, IDC_SIZENWSE ); break;
+	case Icon::ResizeXY2:
+		icon = LoadCursor( nullptr, IDC_SIZENESW ); break;
+	case Icon::Move:
+		icon = LoadCursor( nullptr, IDC_SIZEALL ); break;
+	case Icon::No:
+		icon = LoadCursor(nullptr, IDC_NO); break;
+	case Icon::Nothing:
+		icon = nullptr; break;
 	default:
-		icon = LoadCursor(nullptr, IDC_ARROW); break;
+		icon = LoadCursor( nullptr, IDC_ARROW ); break;
 	}
-	SetCursor(icon);
+	SetCursor( icon );
 }

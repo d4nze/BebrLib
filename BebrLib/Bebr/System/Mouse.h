@@ -19,10 +19,7 @@ namespace bebr
 			void setPosition(math::Vector2i position, const Window& window) const;
 			math::Vector2i getPosition(const Window& window) const;
 
-			void setVisible( bool visible );
-			bool getVisible() const;
-
-			enum Icon { Arrow, Loading, Select };
+			enum Icon { Arrow, ArrowLoad, Wait, Hand, Text, Cross, ResizeX, ResizeY, ResizeXY1, ResizeXY2, Move, No, Nothing };
 			void setIcon( Icon icon );
 			Icon getIcon() const;
 
@@ -32,7 +29,6 @@ namespace bebr
 
 			friend class Window;
 
-			bool m_visible;
 			Icon m_icon;
 		};
 	}

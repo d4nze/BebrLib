@@ -1,4 +1,4 @@
-C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Core\RectangleData.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\RectangleData.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Core\Rect.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Rect.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Importer\stb_image.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\stb_image.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\System\Window.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Window.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Render\Renderer.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Renderer.obj
@@ -34,3 +34,7 @@ C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Rectangle.cpp;C:\Users\Da
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Circle.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Circle.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Transform\OriginMatrix2.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\OriginMatrix2.obj
 C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\System\Mouse.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\Mouse.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Collision\RectCollider.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\RectCollider.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Texture\StandartTexture.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\StandartTexture.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Collision\RectColliderPro.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\RectColliderPro.obj
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Core\RectPro.cpp;C:\Users\Danii\source\repos\BebrLib\BebrLib\x64\Debug\RectPro.obj
