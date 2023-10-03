@@ -1,10 +1,17 @@
-﻿  Vector2.cpp
-  Window.cpp
+﻿  CameraMatrix2.cpp
+  RectCollider.cpp
+  RectColliderPro.cpp
+  Matrix.cpp
   Renderer.cpp
-  Colorf.cpp
-  Coloru.cpp
-  Shader.cpp
   ShaderProgram.cpp
-  ShaderHandler.cpp
-MSVCRT.lib(exe_main.obj) : error LNK2001: неразрешенный внешний символ main.
-C:\Users\Danii\source\repos\BebrLib\x64\Release\BebrLib.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
+  ShaderUniform.cpp
+  Circle.cpp
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Circle.cpp(50,20): warning C4305: инициализация: усечение из "double" в "float"
+  Rectangle.cpp
+  Shape2.cpp
+  AngleMatrix2.cpp
+  OriginMatrix2.cpp
+  PositionMatrix2.cpp
+  ScaleMatrix2.cpp
+  TransformMatrix2.cpp
+  BebrLib.vcxproj -> C:\Users\Danii\source\repos\BebrLib\x64\Release\BebrLib.lib

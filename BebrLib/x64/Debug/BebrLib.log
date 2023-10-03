@@ -1,5 +1,18 @@
-﻿  Mouse.cpp
-  Window.cpp
+﻿  CameraMatrix2.cpp
+  RectCollider.cpp
+  RectColliderPro.cpp
+  Matrix.cpp
+  Renderer.cpp
+  ShaderProgram.cpp
+  ShaderUniform.cpp
+  Circle.cpp
+C:\Users\Danii\source\repos\BebrLib\BebrLib\Bebr\Shape\Circle.cpp(50,20): warning C4305: инициализация: усечение из "double" в "float"
+  Rectangle.cpp
+  Shape2.cpp
+  AngleMatrix2.cpp
+  OriginMatrix2.cpp
+  PositionMatrix2.cpp
+  ScaleMatrix2.cpp
+  TransformMatrix2.cpp
   Создание кода...
-glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR уже определен в opengl32.lib(OPENGL32.dll); второе определение пропущено
   BebrLib.vcxproj -> C:\Users\Danii\source\repos\BebrLib\x64\Debug\BebrLib.lib

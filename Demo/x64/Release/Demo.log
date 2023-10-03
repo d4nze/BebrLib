@@ -1,11 +1,7 @@
-﻿  main.cpp
-main.obj : error LNK2001: неразрешенный внешний символ "public: void __cdecl bebr::system::Window::pollEvent(void)" (?pollEvent@Window@system@bebr@@QEAAXXZ).
-main.obj : error LNK2001: неразрешенный внешний символ "public: bool __cdecl bebr::system::Window::isOpen(void)" (?isOpen@Window@system@bebr@@QEAA_NXZ).
-main.obj : error LNK2001: неразрешенный внешний символ "public: __cdecl bebr::system::Window::~Window(void)" (??1Window@system@bebr@@QEAA@XZ).
-main.obj : error LNK2001: неразрешенный внешний символ "public: __cdecl bebr::system::Window::Window(int,int,char const *)" (??0Window@system@bebr@@QEAA@HHPEBD@Z).
-main.obj : error LNK2001: неразрешенный внешний символ "public: void __cdecl bebr::render::Renderer::display(void)" (?display@Renderer@render@bebr@@QEAAXXZ).
-main.obj : error LNK2001: неразрешенный внешний символ "public: void __cdecl bebr::render::Renderer::clear(float,float,float,float)" (?clear@Renderer@render@bebr@@QEAAXMMMM@Z).
-main.obj : error LNK2001: неразрешенный внешний символ "public: void __cdecl bebr::render::Renderer::end(void)" (?end@Renderer@render@bebr@@QEAAXXZ).
-main.obj : error LNK2001: неразрешенный внешний символ "public: void __cdecl bebr::render::Renderer::start(class bebr::system::Window *)" (?start@Renderer@render@bebr@@QEAAXPEAVWindow@system@3@@Z).
-main.obj : error LNK2001: неразрешенный внешний символ "public: static class bebr::render::Renderer & __cdecl bebr::render::Renderer::Get(void)" (?Get@Renderer@render@bebr@@SAAEAV123@XZ).
-C:\Users\Danii\source\repos\BebrLib\x64\Release\Demo.exe : fatal error LNK1120: неразрешенных внешних элементов: 9
+﻿LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 183 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+BebrLib.lib(glew.obj) : warning LNK4099: "" PDB не найден с "BebrLib.lib(glew.obj)" или на ""; компоновка объекта выполняется как при отсутствии отладочных данных
+  Demo.vcxproj -> C:\Users\Danii\source\repos\BebrLib\x64\Release\Demo.exe

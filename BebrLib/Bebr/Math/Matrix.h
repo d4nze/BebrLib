@@ -11,7 +11,6 @@ namespace bebr
 			Matrix();
 			Matrix( float value );
 
-			operator float* () const;
 			float* operator[]( unsigned int index );
 
 			Matrix<width, height> operator+( const Matrix<width, height>& other ) const;
@@ -45,6 +44,18 @@ namespace bebr
 		typedef Matrix<4, 4> Mat4;
 		typedef Matrix<4, 2> Mat4x2;
 		typedef Matrix<4, 3> Mat4x3;
+
+		template<unsigned int width, unsigned int height>
+		float* getMatrixData(Matrix<width, height>& matrix)
+		{
+			unsigned int size = width * height;
+			float* result = new float[size];
+			for (unsigned int i = 0; i < size; i++)
+			{
+				result[i] = matrix[i % width][i / height];
+			}
+			return result;
+		}
 	}
 }
 
@@ -70,18 +81,6 @@ bebr::math::Matrix<width, height>::Matrix( float value )
 			m_data[ i ][ j ] = value;
 		}
 	}
-}
-
-template<unsigned int width, unsigned int height>
-inline bebr::math::Matrix<width, height>::operator float* () const
-{
-	unsigned int size = width * height;
-	float* data = new float[ size ];
-	for (unsigned int i = 0; i < size; i++)
-	{
-		data[ i ] = m_data[ i % width ][ i / height ];
-	}
-	return data;
 }
 
 template<unsigned int width, unsigned int height>
