@@ -1,3 +1,4 @@
-﻿LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+﻿  main.cpp
+LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
 BebrLib.lib(glew.obj) : warning LNK4099: "" PDB не найден с "BebrLib.lib(glew.obj)" или на ""; компоновка объекта выполняется как при отсутствии отладочных данных
   Demo.vcxproj -> C:\Users\Danii\source\repos\BebrLib\Debug\Demo.exe

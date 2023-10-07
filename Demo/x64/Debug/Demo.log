@@ -1,2 +1,4 @@
 ﻿  main.cpp
+BebrLib.lib(glew.obj) : warning LNK4099: "" PDB не найден с "BebrLib.lib(glew.obj)" или на ""; компоновка объекта выполняется как при отсутствии отладочных данных
+LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
   Demo.vcxproj -> C:\Users\Danii\source\repos\BebrLib\x64\Debug\Demo.exe

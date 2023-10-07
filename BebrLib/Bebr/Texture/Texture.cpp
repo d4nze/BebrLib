@@ -1,6 +1,9 @@
 #include "Texture.h"
 #include <GL/glew.h>
 
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
 bebr::texture::Texture::Texture() : m_data( nullptr ), m_width( 0 ), m_height( 0 ), m_colors( 0u )
 {
 	glGenTextures( 1, &m_id );
